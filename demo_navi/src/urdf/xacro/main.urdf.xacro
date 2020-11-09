@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<robot
+	xmlns:xacro="http://www.ros.org/wiki/xacro"
+  name="demo_DIR"
+>
+
+	<xacro:include filename="$(find demo_navi)/src/urdf/xacro/rim.urdf.xacro"/>
+
+	<link name="base_footprint"/>
+
+	<link name="base_link">
+
+	<inertial>
+		<origin xyz="-0.15 0 0.045"
+			rpy="0 0 0" />
+		<mass value="5"/>
+		<inertia
+			ixx="0.03626"
+			ixy="0"
+			ixz="0"
+			iyy="0.0735"
+			iyz="0"
+			izz="0.10976"
+		/>
+
+	</inertial>
+	<visual>
+		<origin xyz="0.075 -0.325 0.112"
+			rpy="-1.57 0 1.57" />
+
+		<geometry>
+
+			<mesh filename="package://demo_navi/src/meshes/base_link.stl"/>
+			<scale>0.001 0.001 0.001</scale>
+
+		</geometry>
+		<material name="base_material">
+
+			<color rgba="0.098039 0.098039 0.098039 1"/>
+
+		</material>
+
+	</visual>
+	<collision>
+		<origin xyz="0.075 -0.325 0.112"
+			rpy="-1.57 0 1.57" />
+
+		<geometry>
+
+			<mesh filename="package://demo_navi/src/meshes/base_link.stl"/>
+
+		</geometry>
+
+	</collision>
+
+	</link>
+	<joint
+		name="base_joint"
+		type="fixed"
+	>
+
+		<parent link="base_footprint" />
+		<child link="base_link" />
+		<origin
+			xyz="0 0 0.01905"
+		/>
+
+	</joint>
+	<xacro:rim_macro
+		name="left"
+		color="0.3 0 0"
+		xyz="-0.03 0.215 0.04"
+		rpy="1.570796326794896 0 -0.523599"
+	/>
+	<xacro:rim_macro
+		name="back"
+		color="0 0.3 0"
+		xyz="-0.397 0 0.04"
+		rpy="1.570796326794896 0 1.5708"
+	/>
+	<xacro:rim_macro
+		name="right"
+		color="0 0 0.3"
+		xyz="-0.03 -0.208 0.04"
+		rpy="1.570796326794896 0 -2.61799"
+	/>
+
+
+    <joint name="sick_joint_R" type="fixed">
+      <parent link="base_link" />
+      <child link="sick_R_laser" /><!-- allakse to adress -->
+      <origin rpy="0 0 -1.0471" xyz="0 -0.27 0.086"/>
+    </joint>
+
+    <link name="sick_R_laser">
+      <visual>
+        <geometry>
+          <mesh filename="package://demo_navi/src/meshes/LMS5xx_small.dae" scale="0.0003 0.0003 0.0003"/>
+        </geometry>
+        <material name="blue" >
+          <color rgba="0 0 1 1" />
+        </material>
+      </visual>
+      <!--<collision>
+        <geometry>
+          <mesh filename="package://sick_scan/meshes/LMS5xx_collision.stl" scale="0.3 0.3 0.3"/>
+        </geometry>
+      </collision>-->
+      <inertial>
+        <mass value="0.001" />
+        <origin xyz="0 -0.27 0.086" />
+        <inertia ixx="0.000001" ixy="0.0" ixz="0.0"
+          iyy="0.000001" iyz="0.0" izz="0.000001" />
+      </inertial>
+    </link>
+
+    <joint name="sick_joint_L" type="fixed">
+      <parent link="base_link" />
+      <child link="sick_L_laser" />
+      <origin rpy="0 0 1.0471" xyz="0 0.27 0.086"/>
+    </joint>
+
+    <link name="sick_L_laser">
+      <visual>
+        <geometry>
+          <mesh filename="package://demo_navi/src/meshes/LMS5xx_small.dae" scale="0.0003 0.0003 0.0003"/>
+        </geometry>
+        <material name="blue" >
+          <color rgba="0 0 1 1" />
+        </material>
+      </visual>
+      <!--<collision>
+        <geometry>
+          <mesh filename="package://sick_scan/meshes/LMS5xx_collision.stl" scale="0.3 0.3 0.3" />
+        </geometry>
+      </collision>-->
+      <inertial>
+        <mass value="0.001" />
+        <origin xyz="0 0.27 0.086" />
+        <inertia ixx="0.000001" ixy="0.0" ixz="0.0"
+          iyy="0.000001" iyz="0.0" izz="0.000001" />
+      </inertial>
+    </link>
+
+
+	<gazebo>
+
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+
+			<robotNamespace>/demo_DIR</robotNamespace>
+
+		</plugin>
+
+	</gazebo>
+
+   <gazebo reference="base_link">
+	<dampingFactor>10</dampingFactor>
+	<minDepth>0.001</minDepth>
+   </gazebo>
+
+    <gazebo>
+     <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+       <commandTopic>cmd_vel</commandTopic>
+       <leftJoint>left_rim_joint</leftJoint>
+       <rightJoint>right_rim_joint</rightJoint>
+       <backJoint>back_rim_joint</backJoint>
+       <wheelSeparation>0.25</wheelSeparation>
+       <wheelDiameter>0.7</wheelDiameter>
+       <torque>10</torque>
+       <odometryTopic>odom</odometryTopic>
+       <odometryFrame>odom</odometryFrame>
+       <odometryRate>20.0</odometryRate>
+       <robotBaseFrame>base_footprint</robotBaseFrame>
+     </plugin>
+   </gazebo>
+
+
+    <gazebo reference="sick_L_laser">
+    <material value="Gazebo/Blue" />
+    <sensor type="ray" name="sick_lms_5_laser_gazebo_v0">
+      <always_on>true</always_on>
+      <update_rate>15.0</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>811</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.5708</min_angle> <!--90 moires -->
+            <max_angle>2.357</max_angle> <!--140 moires -->
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.05</min>
+          <max>4.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin name="gazebo_ros_sick_lms_5_laser_gazebo_v0_controller" filename="libgazebo_ros_laser.so">
+        <gaussianNoise>0.005</gaussianNoise>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>15.0</updateRate>
+        <topicName>scan_L</topicName>     
+        <frameName>sick_L_laser</frameName>
+      </plugin>
+    </sensor>
+   </gazebo>
+
+  <gazebo reference="sick_R_laser">
+    <material value="Gazebo/Blue" />
+    <sensor type="ray" name="sick_lms_5_laser_gazebo_v01">
+      <always_on>true</always_on>
+      <update_rate>15.0</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>811</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.357</min_angle> <!--140 moires -->
+            <max_angle>1.5708</max_angle> <!--90 moires -->
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.05</min>
+          <max>4.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin name="gazebo_ros_sick_lms_5_laser_gazebo_v01_controller" filename="libgazebo_ros_laser.so">
+        <gaussianNoise>0.005</gaussianNoise>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>15.0</updateRate>
+        <topicName>scan_R</topicName>  <!-- allakse ta topics nomizw pws prepei na mpoun ws scan kai ta duo(scan_L & scan_R) -->
+        <frameName>sick_R_laser</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+	
+
+</robot>

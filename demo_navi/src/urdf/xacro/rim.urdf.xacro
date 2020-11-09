@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<robot 
+   xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:include filename="$(find demo_navi)/src/urdf/xacro/roller.urdf.xacro"/>
+
+	<xacro:macro
+		name="rim_macro"
+		params="name color xyz rpy"
+	>
+
+		<link name="rim_${name}_link">
+
+			<inertial>
+
+				<origin xyz="0 0 0"/>
+				<mass value="0.5"/>
+				<inertia
+					ixx="2.75e-04"
+					ixy="0"
+					ixz="0"
+					iyy="3.06e-04"
+					iyz="0"
+					izz="2.75e-04"
+				/>
+			</inertial>
+			<visual>
+
+				<geometry>
+
+					<mesh filename="package://demo_navi/src/meshes/rim.stl"/>
+
+				</geometry>
+				<material name="rim_${name}_material">
+
+					<color rgba="${color} 1"/>
+
+				</material>
+
+			</visual>
+			<collision>
+
+				<geometry>
+
+					<mesh filename="package://demo_navi/src/meshes/rim.stl"/>
+
+				</geometry>
+
+			</collision>
+
+		</link>
+		<joint
+			name="rim_${name}_joint"
+			type="continuous"
+		>
+
+			<parent link="base_link" />
+			<child link="rim_${name}_link" />
+			<axis xyz="0 0 1"/>
+			<origin
+				xyz="${xyz}"
+				rpy="${rpy}"
+			/>
+
+		</joint>
+		<xacro:roller_macro
+			parent="${name}"
+			name="s"
+			xyz="0 -0.025 0.014"
+			rpy="0 0 3.1415"
+		/>
+		<xacro:roller_macro
+			parent="${name}"
+			name="nw"
+			xyz="-0.0215 0.0125 0.014"
+			rpy="0 0 1.0472"
+		/>
+		<xacro:roller_macro
+			parent="${name}"
+			name="ne"
+			xyz="0.0215 0.0125 0.014"
+			rpy="0 0 -1.0472"
+		/>
+		<xacro:roller_macro
+			parent="${name}"
+			name="sw"
+			xyz="0.0215 -0.0125 -0.014"
+			rpy="0 0 1.0472"
+		/>
+		<xacro:roller_macro
+			parent="${name}"
+			name="n"
+			xyz="0 0.025 -0.014"
+			rpy="0 0 3.1415"
+		/>
+		<xacro:roller_macro
+			parent="${name}"
+			name="se"
+			xyz="-0.0215 -0.0125 -0.014"
+			rpy="0 0 -1.0472"
+		/>
+		<transmission name="rim_${name}_transmission">
+
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="rim_${name}_joint">
+
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+
+			</joint>
+			<actuator name="rim_${name}_motor">
+
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+				<mechanicalReduction>1</mechanicalReduction>
+
+			</actuator>
+
+		</transmission>
+
+		<gazebo reference = "rim_${name}_link">
+			<dampingFactor>10</dampingFactor>
+			<minDepth>0.001</minDepth>
+		</gazebo>
+
+
+	</xacro:macro>
+
+</robot>
