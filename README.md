@@ -10,7 +10,7 @@ Now you can follow the steps to view the navigation course!
 
 In order to start the simulation go to your terminal and hit ``` roslaunch demo_navi mybot_world.launch```. Now we want our robot to move as we want, for that hit ```rosrun teleop_twist_keyboard teleop_twist_keyboard.py```.
 
-#### 2 Merge our two LaserScans
+#### 2. Merge our two LaserScans
 
 Because we have two LiDAR we must somehow merge their scan's so launch
 ```roslaunch ira_laser_tools laserscan_multi_merger.launch```.
