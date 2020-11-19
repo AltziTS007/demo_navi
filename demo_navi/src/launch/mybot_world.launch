@@ -34,16 +34,16 @@
   />
 
   
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find demo_navi)/src/urdf/main_generated.urdf.xacro'"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find demo_navi)/src/urdf/model.urdf.xacro'"/>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
       <remap from="joint_state" to="/simple_model/joint_states" />
-      <rosparam param="publish_frequency">50</rosparam>
+      <rosparam param="publish_frequency">10</rosparam>
   </node>
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
       <param name="use_gui" value="False"/>
-      <rosparam param="publish_frequency">50</rosparam>
+      <rosparam param="publish_frequency">10</rosparam>
   </node>
 
   <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"

@@ -207,3 +207,18 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(sim_dynamixel_controller src/src/sim_dynamixel_controller.cpp)
+target_link_libraries(sim_dynamixel_controller ${catkin_LIBRARIES})
+add_dependencies(sim_dynamixel_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(wheel_operator src/src/wheel_operator.cpp)
+target_link_libraries(wheel_operator ${catkin_LIBRARIES})
+add_dependencies(wheel_operator ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(odometry_publisher src/src/sim_odometry_publisher.cpp)
+target_link_libraries(odometry_publisher ${catkin_LIBRARIES})
+add_dependencies(odometry_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
+

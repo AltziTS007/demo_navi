@@ -10,14 +10,14 @@
 
 			<inertial>
 
-				<mass value="0.00113845"/>
+				<mass value="0.5"/>
 				<inertia
-					ixx="2.0308e-05"
+					ixx="8.8445e-06"
 					ixy="0"
 					ixz="0"
-					iyy="1.0512e-05"
+					iyy="8.8445e-06"
 					iyz="0"
-					izz="2.0308e-05"
+					izz="3.627e-04"
 				/>
 
 			</inertial>
@@ -42,6 +42,14 @@
 					<mesh filename="package://demo_navi/src/meshes/roller.stl"/>
 
 				</geometry>
+				<surface>
+        			<friction>
+          				<ode>
+            				<mu>0.5</mu>
+            				<mu2>0.5</mu2>
+          				</ode>
+        			</friction>
+      			</surface>
 
 			</collision>
 
@@ -58,9 +66,15 @@
 				xyz="${xyz}"
 				rpy="${rpy}"
 			/>
+			<limit effort="10000000" velocity="1000000"/>
+			<joint_properties friction="1.0"/>			
 
 		</joint>
 	<gazebo reference = "roller_${name}_rim_${parent}_link">
+		<dampingFactor>10</dampingFactor>
+		<minDepth>0.001</minDepth>
+	</gazebo>
+	<gazebo reference = "roller_${name}_rim_${parent}_joint">
 		<dampingFactor>10</dampingFactor>
 		<minDepth>0.001</minDepth>
 	</gazebo>

@@ -1,15 +1,12 @@
 global_costmap:
-  global_frame: odom
+  global_frame: map
   robot_base_frame: base_footprint
-  update_frequency: 5
-  publish_frequency: 5
-  transform_tolerance: 0.3
+  update_frequency: 5.0
+  publish_frequency: 2.0
   width: 15
   height: 15
-  origin_x: -7.5
-  origin_y: -7.5
   rolling_window: true
   inflation_radius: 0.1
-  resolution: 0.02
+  resolution: 0.1
   plugins: 
     - {name: static_layer,       type: "costmap_2d::StaticLayer"}
