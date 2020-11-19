@@ -55,7 +55,7 @@
         <rosparam file="$(find amcl)/config/global_costmap_params.yaml" command="load" />
         <rosparam file="$(find amcl)/config/trajectory_planner.yaml" command="load" />
     
-        <remap from="cmd_vel" to="/FN/cmd_vel"/>
+        <remap from="cmd_vel" to="cmd_vel"/>
         <remap from="odom" to="odom"/>
         <remap from="scan" to="scan_multi"/>
         <param name="move_base/DWAPlannerROS/yaw_goal_tolerance" value="1.0"/>
