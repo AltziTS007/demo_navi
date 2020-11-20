@@ -52,14 +52,9 @@ int main(int argc, char **argv){
     ros::init(argc, argv, "sim_dynamixel_controller");
     ros::NodeHandle node_handle("");
 
-    //std_msgs::Float64 l = 1;
-    //std_msgs::Float64 r = 1;
-    //std_msgs::Float64 b = 1;
-
     DynamixelController dynamixel_controller;
 
     dynamixel_controller.initSubscriber();
-    //dynamixel_controller.jointPublisher(l,r,b);
 
     ros::spin();
 
