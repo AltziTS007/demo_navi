@@ -37,7 +37,7 @@
     <inertial>
       <origin xyz="0 0 0"/>
       <mass value="0.5"/>
-      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="2.75e-04" iyz="0" izz="3.43e-04"/>
+      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="3.06e-04" iyz="0" izz="2.75e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -71,8 +71,8 @@
   </joint>
   <link name="roller_s_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -114,8 +114,8 @@
   </gazebo>
   <link name="roller_nw_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -157,8 +157,8 @@
   </gazebo>
   <link name="roller_ne_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -200,8 +200,8 @@
   </gazebo>
   <link name="roller_sw_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -243,8 +243,8 @@
   </gazebo>
   <link name="roller_n_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -286,8 +286,8 @@
   </gazebo>
   <link name="roller_se_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -330,10 +330,10 @@
   <transmission name="rim_left_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_left_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_left_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -349,7 +349,7 @@
     <inertial>
       <origin xyz="0 0 0"/>
       <mass value="0.5"/>
-      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="2.75e-04" iyz="0" izz="3.43e-04"/>
+      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="3.06e-04" iyz="0" izz="2.75e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -383,8 +383,8 @@
   </joint>
   <link name="roller_s_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -426,8 +426,8 @@
   </gazebo>
   <link name="roller_nw_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -469,8 +469,8 @@
   </gazebo>
   <link name="roller_ne_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -512,8 +512,8 @@
   </gazebo>
   <link name="roller_sw_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -555,8 +555,8 @@
   </gazebo>
   <link name="roller_n_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -598,8 +598,8 @@
   </gazebo>
   <link name="roller_se_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -642,10 +642,10 @@
   <transmission name="rim_back_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_back_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_back_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -661,7 +661,7 @@
     <inertial>
       <origin xyz="0 0 0"/>
       <mass value="0.5"/>
-      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="2.75e-04" iyz="0" izz="3.43e-04"/>
+      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="3.06e-04" iyz="0" izz="2.75e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -695,8 +695,8 @@
   </joint>
   <link name="roller_s_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -738,8 +738,8 @@
   </gazebo>
   <link name="roller_nw_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -781,8 +781,8 @@
   </gazebo>
   <link name="roller_ne_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -824,8 +824,8 @@
   </gazebo>
   <link name="roller_sw_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -867,8 +867,8 @@
   </gazebo>
   <link name="roller_n_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -910,8 +910,8 @@
   </gazebo>
   <link name="roller_se_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.5"/>
+      <inertia ixx="8.8445e-06" ixy="0" ixz="0" iyy="8.8445e-06" iyz="0" izz="3.627e-04"/>
     </inertial>
     <visual>
       <geometry>
@@ -954,10 +954,10 @@
   <transmission name="rim_right_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_right_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_right_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1031,7 +1031,7 @@
   </gazebo>
   <gazebo>
     <plugin filename="libgazebo_ros_planar_move.so" name="object_controller">
-      <commandTopic>/ok/cmd_vel</commandTopic>
+      <commandTopic>cmd_vel</commandTopic>
       <leftJoint>left_rim_joint</leftJoint>
       <rightJoint>right_rim_joint</rightJoint>
       <backJoint>back_rim_joint</backJoint>
@@ -1048,7 +1048,7 @@
     <material value="Gazebo/Blue"/>
     <sensor name="sick_lms_5_laser_gazebo_v0" type="ray">
       <always_on>true</always_on>
-      <update_rate>50.0</update_rate>
+      <update_rate>15.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <ray>
@@ -1071,7 +1071,7 @@
       <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_sick_lms_5_laser_gazebo_v0_controller">
         <gaussianNoise>0.005</gaussianNoise>
         <alwaysOn>true</alwaysOn>
-        <updateRate>50.0</updateRate>
+        <updateRate>15.0</updateRate>
         <topicName>scan_L</topicName>
         <frameName>sick_L_laser</frameName>
       </plugin>
@@ -1081,7 +1081,7 @@
     <material value="Gazebo/Blue"/>
     <sensor name="sick_lms_5_laser_gazebo_v01" type="ray">
       <always_on>true</always_on>
-      <update_rate>50.0</update_rate>
+      <update_rate>15.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <ray>
@@ -1104,7 +1104,7 @@
       <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_sick_lms_5_laser_gazebo_v01_controller">
         <gaussianNoise>0.005</gaussianNoise>
         <alwaysOn>true</alwaysOn>
-        <updateRate>50.0</updateRate>
+        <updateRate>15.0</updateRate>
         <topicName>scan_R</topicName>
         <!-- allakse ta topics nomizw pws prepei na mpoun ws scan kai ta duo(scan_L & scan_R) -->
         <frameName>sick_R_laser</frameName>

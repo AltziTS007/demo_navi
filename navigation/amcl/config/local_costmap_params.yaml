@@ -7,7 +7,10 @@ local_costmap:
   width: 3
   height: 3
   resolution: 0.1
-  inflation_radius: 0.1
   plugins: 
     - {name: static_layer,       type: "costmap_2d::StaticLayer"}
     - {name: obstacle_layer,      type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation,        type: "costmap_2d::InflationLayer"}
+  inflation:
+    inflation_radius: 0.5
+    cost_scaling_factor: 4 # larger number = lower cost elevation

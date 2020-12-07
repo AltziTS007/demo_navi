@@ -5,16 +5,18 @@ demo_DIR:
         publish_rate: 50
 
     left_joint_velocity_controller:
-        type: effort_controllers/JointVelocityController
+        type: velocity_controllers/JointVelocityController
         joint: rim_left_joint
-        pid: {p: 0.05, i: -0.1, d: 0.0}
 
     back_joint_velocity_controller:
-        type: effort_controllers/JointVelocityController
+        type: velocity_controllers/JointVelocityController
         joint: rim_back_joint
-        pid: {p: 0.05, i: -0.1, d: 0.0}
 
     right_joint_velocity_controller:
-        type: effort_controllers/JointVelocityController
+        type: velocity_controllers/JointVelocityController
         joint: rim_right_joint
-        pid: {p: 0.05, i: -0.1, d: 0.0}
+
+    gazebo_ros_control/pid_gains:
+        rim_left_joint: {p: 0.0001, i: 0.0, d: 0.0}
+        rim_back_joint: {p: 0.0001, i: 0.0, d: 0.0}
+        rim_right_joint: {p: 0.0001, i: 0.0, d: 0.0}

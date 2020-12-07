@@ -160,7 +160,7 @@
 
     <gazebo>
      <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-       <commandTopic>cmd_vel</commandTopic>
+       <commandTopic>/ok/cmd_vel</commandTopic>
        <leftJoint>left_rim_joint</leftJoint>
        <rightJoint>right_rim_joint</rightJoint>
        <backJoint>back_rim_joint</backJoint>
@@ -179,7 +179,7 @@
     <material value="Gazebo/Blue" />
     <sensor type="ray" name="sick_lms_5_laser_gazebo_v0">
       <always_on>true</always_on>
-      <update_rate>15.0</update_rate>
+      <update_rate>50.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <ray>
@@ -200,7 +200,7 @@
       <plugin name="gazebo_ros_sick_lms_5_laser_gazebo_v0_controller" filename="libgazebo_ros_laser.so">
         <gaussianNoise>0.005</gaussianNoise>
         <alwaysOn>true</alwaysOn>
-        <updateRate>15.0</updateRate>
+        <updateRate>50.0</updateRate>
         <topicName>scan_L</topicName>     
         <frameName>sick_L_laser</frameName>
       </plugin>
@@ -211,7 +211,7 @@
     <material value="Gazebo/Blue" />
     <sensor type="ray" name="sick_lms_5_laser_gazebo_v01">
       <always_on>true</always_on>
-      <update_rate>15.0</update_rate>
+      <update_rate>50.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <ray>
@@ -232,7 +232,7 @@
       <plugin name="gazebo_ros_sick_lms_5_laser_gazebo_v01_controller" filename="libgazebo_ros_laser.so">
         <gaussianNoise>0.005</gaussianNoise>
         <alwaysOn>true</alwaysOn>
-        <updateRate>15.0</updateRate>
+        <updateRate>50.0</updateRate>
         <topicName>scan_R</topicName>  <!-- allakse ta topics nomizw pws prepei na mpoun ws scan kai ta duo(scan_L & scan_R) -->
         <frameName>sick_R_laser</frameName>
       </plugin>

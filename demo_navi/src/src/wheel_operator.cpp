@@ -16,12 +16,12 @@ std::map<char, std::vector<float>> moveBindings
   {'l', {0, 0, 0, -1}},
   {'u', {1, 0, 0, 1}},
   {',', {-1, 0, 0, 0}},
-  {'.', {-1, 0, 0, -1}},
-  {'m', {-1, 0, 0, 1}},
+  {'.', {-1, 1, 0, 1}},
+  {'m', {-1, 0, 0, -1}},
   {'O', {1, -1, 0, 0}},
   {'I', {1, 0, 0, 0}},
-  {'J', {0, 1, 0, 1}},
-  {'L', {0, -1, 0, -1}},
+  {'J', {0, 1, 0, 0}},
+  {'L', {0, -1, 0, 0}},
   {'U', {1, 1, 0, 0}},
   {'<', {-1, 0, 0, 0}},
   {'>', {-1, -1, 0, 0}},
@@ -107,7 +107,7 @@ int main(int argc, char** argv)
   ros::NodeHandle nh;
 
   // Init cmd_vel publisher
-  ros::Publisher pub = nh.advertise<geometry_msgs::Twist>("/FN/cmd_vel", 1);
+  ros::Publisher pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
   // Create Twist message
   geometry_msgs::Twist twist;
@@ -124,8 +124,8 @@ int main(int argc, char** argv)
     if (moveBindings.count(key) == 1)
     {
       // Grab the direction data
-      x = moveBindings[key][1];
-      y = moveBindings[key][0];
+      x = moveBindings[key][0];
+      y = moveBindings[key][1];
       z = moveBindings[key][2];
       th = moveBindings[key][3];
 

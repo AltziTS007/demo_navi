@@ -330,10 +330,10 @@
   <transmission name="rim_left_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_left_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_left_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -642,10 +642,10 @@
   <transmission name="rim_back_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_back_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_back_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -954,10 +954,10 @@
   <transmission name="rim_right_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_right_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_right_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1038,8 +1038,8 @@
       <wheelSeparation>0.25</wheelSeparation>
       <wheelDiameter>0.7</wheelDiameter>
       <torque>10</torque>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
+      <odometryTopic>/ok/odom</odometryTopic>
+      <odometryFrame>/ok/odom</odometryFrame>
       <odometryRate>20.0</odometryRate>
       <robotBaseFrame>base_footprint</robotBaseFrame>
     </plugin>

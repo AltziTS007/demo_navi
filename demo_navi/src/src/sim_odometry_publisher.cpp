@@ -1,6 +1,45 @@
 #include <ros/ros.h>
 #include <tf/transform_broadcaster.h>
 #include <nav_msgs/Odometry.h>
+#include <std_msgs/Float64.h>
+#include <iostream>
+#include <demo_navi/DynamixelStateList.h>
+#include <demo_navi/DynamixelState.h>
+#include <cmath>
+#define wheel_seperation 0.25
+#define wheel_radius 0.038
+
+double Vll = 0.0;
+double Vrr = 0.0;
+double Vbb = 0.0;
+
+
+
+double convertValue2Velocity(const double &value)
+{
+    double velocity = 0;
+    const double RPM2RADPERSEC = 0.104719755f;
+    const float RPM = 0.732f;
+    const float coefficient = 0.012f;
+    velocity = value * RPM * RPM2RADPERSEC * wheel_radius * coefficient;
+    return velocity;  //m/s
+}
+
+double throwV(double V){
+  return V;
+}
+
+void DynamixelStateCallback(const demo_navi::DynamixelStateListConstPtr& msg){
+
+    Vll = convertValue2Velocity(msg-> dynamixel_state[0].present_velocity);
+    Vrr = convertValue2Velocity(msg-> dynamixel_state[1].present_velocity);
+    Vbb = convertValue2Velocity(msg-> dynamixel_state[2].present_velocity);
+
+    //ROS_INFO("01Vl: [%lf], 01Vr: [%lf]", Vll,Vrr);
+}
+
+
+
 
 int main(int argc, char** argv){
   ros::init(argc, argv, "odometry_publisher");
@@ -9,23 +48,26 @@ int main(int argc, char** argv){
   ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
   tf::TransformBroadcaster odom_broadcaster;
 
+  //ROS_INFO("Vl: [%lf], Vr: [%lf]", Vll,Vrr);
+  ros::Subscriber dynamixel_state_sub = n.subscribe("/demo_DIR/StatePublisher", 1, DynamixelStateCallback);
+
   double x = 0.0;
   double y = 0.0;
   double th = 0.0;
-
-  double vx = 0.1;
-  double vy = -0.1;
-  double vth = 0.1;
 
   ros::Time current_time, last_time;
   current_time = ros::Time::now();
   last_time = ros::Time::now();
 
-  ros::Rate r(1.0);
+  ros::Rate r(100.0);
   while(n.ok()){
 
     ros::spinOnce();               // check for incoming messages
     current_time = ros::Time::now();
+
+    double vy = ((2*Vbb - Vll - Vrr) / 3.0);
+    double vx = ((sqrt(3.0)*Vrr - sqrt(3.0)*Vll) / 3.0);
+    double vth = ((Vrr + Vbb + Vll) / (3.0*wheel_seperation));
 
     //compute odometry in a typical way given the velocities of the robot
     double dt = (current_time - last_time).toSec();

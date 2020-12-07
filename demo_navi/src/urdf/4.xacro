@@ -330,10 +330,10 @@
   <transmission name="rim_left_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_left_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_left_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -642,10 +642,10 @@
   <transmission name="rim_back_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_back_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_back_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -954,10 +954,10 @@
   <transmission name="rim_right_transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rim_right_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="rim_right_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1031,7 +1031,7 @@
   </gazebo>
   <gazebo>
     <plugin filename="libgazebo_ros_planar_move.so" name="object_controller">
-      <commandTopic>/ok/cmd_vel</commandTopic>
+      <commandTopic>cmd_vel</commandTopic>
       <leftJoint>left_rim_joint</leftJoint>
       <rightJoint>right_rim_joint</rightJoint>
       <backJoint>back_rim_joint</backJoint>
@@ -1048,7 +1048,7 @@
     <material value="Gazebo/Blue"/>
     <sensor name="sick_lms_5_laser_gazebo_v0" type="ray">
       <always_on>true</always_on>
-      <update_rate>50.0</update_rate>
+      <update_rate>15.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <ray>
@@ -1071,7 +1071,7 @@
       <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_sick_lms_5_laser_gazebo_v0_controller">
         <gaussianNoise>0.005</gaussianNoise>
         <alwaysOn>true</alwaysOn>
-        <updateRate>50.0</updateRate>
+        <updateRate>15.0</updateRate>
         <topicName>scan_L</topicName>
         <frameName>sick_L_laser</frameName>
       </plugin>
@@ -1081,7 +1081,7 @@
     <material value="Gazebo/Blue"/>
     <sensor name="sick_lms_5_laser_gazebo_v01" type="ray">
       <always_on>true</always_on>
-      <update_rate>50.0</update_rate>
+      <update_rate>15.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <ray>
@@ -1104,7 +1104,7 @@
       <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_sick_lms_5_laser_gazebo_v01_controller">
         <gaussianNoise>0.005</gaussianNoise>
         <alwaysOn>true</alwaysOn>
-        <updateRate>50.0</updateRate>
+        <updateRate>15.0</updateRate>
         <topicName>scan_R</topicName>
         <!-- allakse ta topics nomizw pws prepei na mpoun ws scan kai ta duo(scan_L & scan_R) -->
         <frameName>sick_R_laser</frameName>
