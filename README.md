@@ -8,7 +8,7 @@ Now you can follow the steps to view the navigation course!
 
 #### 1. Launch our world and our robot
 
-In order to start the simulation go to your terminal and hit ``` roslaunch demo_navi mybot_world.launch```. Now we want our robot to move as we want, for that hit ```rosrun teleop_twist_keyboard teleop_twist_keyboard.py```.
+In order to start the simulation go to your terminal and hit ``` roslaunch demo_navi mybot_world.launch```. Now we want our robot to move as we want, for that hit ```rosrun demo_navi wheel_operator```.
 
 #### 2. Merge our two LaserScans
 
@@ -25,7 +25,7 @@ After you finish mapping the area, now we must save it, for that open a new term
 
 #### 5. Launch amcl and move base
 
-Finally we can see our robot moving autonomously. To begin, do again the step one without running **teleop_twist_keyboard** and step two after that we can launch amcl ```roslaunch amcl amcl_omni.launch```.
+Finally we can see our robot moving autonomously. To begin, do again the step one without running **teleop_twist_keyboard aka wheel_operator** and step two after that we can launch amcl ```roslaunch amcl amcl_omni.launch```.
 
 
 :warning: *Every bug you encouter, address it to the Issues section above.* :warning:
