@@ -8,8 +8,8 @@
   <link name="base_link">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.15 0 0.045"/>
-      <mass value="5"/>
-      <inertia ixx="0.03626" ixy="0" ixz="0" iyy="0.0735" iyz="0" izz="0.10976"/>
+      <mass value="0.07862944645"/>
+      <inertia ixx="0.00002035985530754" ixy="0" ixz="0" iyy="0.00002035985530754" iyz="0" izz="0.00003945961663220"/>
     </inertial>
     <visual>
       <origin rpy="-1.57 0 1.57" xyz="0.075 -0.325 0.112"/>
@@ -36,8 +36,8 @@
   <link name="rim_left_link">
     <inertial>
       <origin xyz="0 0 0"/>
-      <mass value="0.5"/>
-      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="2.75e-04" iyz="0" izz="3.43e-04"/>
+      <mass value="0.0083578"/>
+      <inertia ixx="2.75e-07" ixy="0" ixz="0" iyy="2.75e-07" iyz="0" izz="3.43e-07"/>
     </inertial>
     <visual>
       <geometry>
@@ -54,8 +54,8 @@
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -71,12 +71,12 @@
   </joint>
   <link name="roller_s_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -84,13 +84,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -101,12 +101,16 @@
     <child link="roller_s_rim_left_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 3.1415" xyz="0 -0.025 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_s_rim_left_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_s_rim_left_joint">
     <dampingFactor>10</dampingFactor>
@@ -114,12 +118,12 @@
   </gazebo>
   <link name="roller_nw_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -127,13 +131,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -144,12 +148,16 @@
     <child link="roller_nw_rim_left_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 1.0472" xyz="-0.0215 0.0125 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_nw_rim_left_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_nw_rim_left_joint">
     <dampingFactor>10</dampingFactor>
@@ -157,12 +165,12 @@
   </gazebo>
   <link name="roller_ne_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -170,13 +178,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -187,12 +195,16 @@
     <child link="roller_ne_rim_left_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 -1.0472" xyz="0.0215 0.0125 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_ne_rim_left_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_ne_rim_left_joint">
     <dampingFactor>10</dampingFactor>
@@ -200,12 +212,12 @@
   </gazebo>
   <link name="roller_sw_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -213,13 +225,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -230,12 +242,16 @@
     <child link="roller_sw_rim_left_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 1.0472" xyz="0.0215 -0.0125 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_sw_rim_left_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_sw_rim_left_joint">
     <dampingFactor>10</dampingFactor>
@@ -243,12 +259,12 @@
   </gazebo>
   <link name="roller_n_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -256,13 +272,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -273,12 +289,16 @@
     <child link="roller_n_rim_left_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 3.1415" xyz="0 0.025 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_n_rim_left_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_n_rim_left_joint">
     <dampingFactor>10</dampingFactor>
@@ -286,12 +306,12 @@
   </gazebo>
   <link name="roller_se_rim_left_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -299,13 +319,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -316,12 +336,16 @@
     <child link="roller_se_rim_left_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 -1.0472" xyz="-0.0215 -0.0125 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_se_rim_left_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_se_rim_left_joint">
     <dampingFactor>10</dampingFactor>
@@ -340,6 +364,11 @@
   <gazebo reference="rim_left_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
   </gazebo>
   <gazebo reference="rim_left_joint">
     <dampingFactor>10</dampingFactor>
@@ -348,8 +377,8 @@
   <link name="rim_back_link">
     <inertial>
       <origin xyz="0 0 0"/>
-      <mass value="0.5"/>
-      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="2.75e-04" iyz="0" izz="3.43e-04"/>
+      <mass value="0.0083578"/>
+      <inertia ixx="2.75e-07" ixy="0" ixz="0" iyy="2.75e-07" iyz="0" izz="3.43e-07"/>
     </inertial>
     <visual>
       <geometry>
@@ -366,8 +395,8 @@
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -383,12 +412,12 @@
   </joint>
   <link name="roller_s_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -396,13 +425,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -413,12 +442,16 @@
     <child link="roller_s_rim_back_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 3.1415" xyz="0 -0.025 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_s_rim_back_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_s_rim_back_joint">
     <dampingFactor>10</dampingFactor>
@@ -426,12 +459,12 @@
   </gazebo>
   <link name="roller_nw_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -439,13 +472,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -456,12 +489,16 @@
     <child link="roller_nw_rim_back_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 1.0472" xyz="-0.0215 0.0125 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_nw_rim_back_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_nw_rim_back_joint">
     <dampingFactor>10</dampingFactor>
@@ -469,12 +506,12 @@
   </gazebo>
   <link name="roller_ne_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -482,13 +519,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -499,12 +536,16 @@
     <child link="roller_ne_rim_back_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 -1.0472" xyz="0.0215 0.0125 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_ne_rim_back_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_ne_rim_back_joint">
     <dampingFactor>10</dampingFactor>
@@ -512,12 +553,12 @@
   </gazebo>
   <link name="roller_sw_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -525,13 +566,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -542,12 +583,16 @@
     <child link="roller_sw_rim_back_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 1.0472" xyz="0.0215 -0.0125 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_sw_rim_back_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_sw_rim_back_joint">
     <dampingFactor>10</dampingFactor>
@@ -555,12 +600,12 @@
   </gazebo>
   <link name="roller_n_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -568,13 +613,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -585,12 +630,16 @@
     <child link="roller_n_rim_back_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 3.1415" xyz="0 0.025 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_n_rim_back_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_n_rim_back_joint">
     <dampingFactor>10</dampingFactor>
@@ -598,12 +647,12 @@
   </gazebo>
   <link name="roller_se_rim_back_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -611,13 +660,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -628,12 +677,16 @@
     <child link="roller_se_rim_back_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 -1.0472" xyz="-0.0215 -0.0125 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_se_rim_back_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_se_rim_back_joint">
     <dampingFactor>10</dampingFactor>
@@ -652,6 +705,11 @@
   <gazebo reference="rim_back_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
   </gazebo>
   <gazebo reference="rim_back_joint">
     <dampingFactor>10</dampingFactor>
@@ -660,8 +718,8 @@
   <link name="rim_right_link">
     <inertial>
       <origin xyz="0 0 0"/>
-      <mass value="0.5"/>
-      <inertia ixx="2.75e-04" ixy="0" ixz="0" iyy="2.75e-04" iyz="0" izz="3.43e-04"/>
+      <mass value="0.0083578"/>
+      <inertia ixx="2.75e-07" ixy="0" ixz="0" iyy="2.75e-07" iyz="0" izz="3.43e-07"/>
     </inertial>
     <visual>
       <geometry>
@@ -678,8 +736,8 @@
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -695,12 +753,12 @@
   </joint>
   <link name="roller_s_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -708,13 +766,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -725,12 +783,16 @@
     <child link="roller_s_rim_right_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 3.1415" xyz="0 -0.025 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_s_rim_right_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_s_rim_right_joint">
     <dampingFactor>10</dampingFactor>
@@ -738,12 +800,12 @@
   </gazebo>
   <link name="roller_nw_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -751,13 +813,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -768,12 +830,16 @@
     <child link="roller_nw_rim_right_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 1.0472" xyz="-0.0215 0.0125 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_nw_rim_right_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_nw_rim_right_joint">
     <dampingFactor>10</dampingFactor>
@@ -781,12 +847,12 @@
   </gazebo>
   <link name="roller_ne_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -794,13 +860,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -811,12 +877,16 @@
     <child link="roller_ne_rim_right_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 -1.0472" xyz="0.0215 0.0125 0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_ne_rim_right_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_ne_rim_right_joint">
     <dampingFactor>10</dampingFactor>
@@ -824,12 +894,12 @@
   </gazebo>
   <link name="roller_sw_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -837,13 +907,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -854,12 +924,16 @@
     <child link="roller_sw_rim_right_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 1.0472" xyz="0.0215 -0.0125 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_sw_rim_right_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_sw_rim_right_joint">
     <dampingFactor>10</dampingFactor>
@@ -867,12 +941,12 @@
   </gazebo>
   <link name="roller_n_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -880,13 +954,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -897,12 +971,16 @@
     <child link="roller_n_rim_right_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 3.1415" xyz="0 0.025 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_n_rim_right_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_n_rim_right_joint">
     <dampingFactor>10</dampingFactor>
@@ -910,12 +988,12 @@
   </gazebo>
   <link name="roller_se_rim_right_link">
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="9e-06"/>
+      <mass value="0.0011"/>
+      <inertia ixx="2e-08" ixy="0" ixz="0" iyy="2e-08" iyz="0" izz="9e-08"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <material name="roller_material">
         <color rgba="0.1 0.1 0.1 1"/>
@@ -923,13 +1001,13 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://demo_navi/src/meshes/roller.stl"/>
+        <mesh filename="package://demo_navi/src/meshes/roller1.stl"/>
       </geometry>
       <surface>
         <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>0.1</mu>
+            <mu2>0.1</mu2>
           </ode>
         </friction>
       </surface>
@@ -940,12 +1018,16 @@
     <child link="roller_se_rim_right_link"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 -1.0472" xyz="-0.0215 -0.0125 -0.014"/>
-    <limit effort="10000000" velocity="1000000"/>
-    <joint_properties friction="1.0"/>
   </joint>
   <gazebo reference="roller_se_rim_right_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="roller_se_rim_right_joint">
     <dampingFactor>10</dampingFactor>
@@ -964,6 +1046,11 @@
   <gazebo reference="rim_right_link">
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
+    <fdir1>0 0 1</fdir1>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
   </gazebo>
   <gazebo reference="rim_right_joint">
     <dampingFactor>10</dampingFactor>
@@ -973,7 +1060,7 @@
     <parent link="base_link"/>
     <child link="sick_R_laser"/>
     <!-- allakse to adress -->
-    <origin rpy="0 0 -1.0471" xyz="0 -0.27 0.086"/>
+    <origin rpy="0 0 -1.0471" xyz="0 -0.27 0.07"/>
   </joint>
   <link name="sick_R_laser">
     <visual>
@@ -991,14 +1078,14 @@
       </collision>-->
     <inertial>
       <mass value="0.001"/>
-      <origin xyz="0 -0.27 0.086"/>
+      <origin xyz="0 -0.27 0.07"/>
       <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
     </inertial>
   </link>
   <joint name="sick_joint_L" type="fixed">
     <parent link="base_link"/>
     <child link="sick_L_laser"/>
-    <origin rpy="0 0 1.0471" xyz="0 0.27 0.086"/>
+    <origin rpy="0 0 1.0471" xyz="0 0.27 0.07"/>
   </joint>
   <link name="sick_L_laser">
     <visual>
@@ -1016,7 +1103,7 @@
       </collision>-->
     <inertial>
       <mass value="0.001"/>
-      <origin xyz="0 0.27 0.086"/>
+      <origin xyz="0 0.27 0.07"/>
       <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
     </inertial>
   </link>
@@ -1031,7 +1118,7 @@
   </gazebo>
   <gazebo>
     <plugin filename="libgazebo_ros_planar_move.so" name="object_controller">
-      <commandTopic>/ok/cmd_vel</commandTopic>
+      <commandTopic>/gaz_controller/cmd_vel</commandTopic>
       <leftJoint>left_rim_joint</leftJoint>
       <rightJoint>right_rim_joint</rightJoint>
       <backJoint>back_rim_joint</backJoint>
@@ -1110,5 +1197,17 @@
         <frameName>sick_R_laser</frameName>
       </plugin>
     </sensor>
+  </gazebo>
+  <gazebo reference="base_link">
+    <material>Gazebo/Crimson</material>
+  </gazebo>
+  <gazebo reference="rim_left_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="rim_back_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="rim_right_link">
+    <material>Gazebo/Black</material>
   </gazebo>
 </robot>

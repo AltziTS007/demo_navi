@@ -1,8 +1,8 @@
 global_costmap:
   global_frame: map
   robot_base_frame: base_footprint
-  update_frequency: 5.0
-  publish_frequency: 2.0
+  update_frequency: 1.5
+  publish_frequency: 1.0
   width: 15
   height: 15
   rolling_window: true
@@ -11,6 +11,6 @@ global_costmap:
     - {name: static_layer,       type: "costmap_2d::StaticLayer"}
     - {name: inflation,        type: "costmap_2d::InflationLayer"}
   inflation:
-    inflation_radius: 0.5
-    cost_scaling_factor: 8 # larger number = lower cost elevation
+    inflation_radius: 0.6
+    cost_scaling_factor: 0.8 # larger number = lower cost elevation
 

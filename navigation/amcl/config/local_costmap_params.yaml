@@ -12,5 +12,5 @@ local_costmap:
     - {name: obstacle_layer,      type: "costmap_2d::ObstacleLayer"}
     - {name: inflation,        type: "costmap_2d::InflationLayer"}
   inflation:
-    inflation_radius: 0.5
+    inflation_radius: 0.8
     cost_scaling_factor: 4 # larger number = lower cost elevation

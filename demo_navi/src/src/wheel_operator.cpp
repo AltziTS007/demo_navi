@@ -66,8 +66,8 @@ CTRL-C to quit
 )";
 
 // Init variables
-float speed(0.5); // Linear velocity (m/s)
-float turn(1.0); // Angular velocity (rad/s)
+float speed(0.3); // Linear velocity (m/s)
+float turn(3.0); // Angular velocity (rad/s)
 float x(0), y(0), z(0), th(0); // Forward/backward/neutral direction vars
 char key(' ');
 
@@ -107,7 +107,7 @@ int main(int argc, char** argv)
   ros::NodeHandle nh;
 
   // Init cmd_vel publisher
-  ros::Publisher pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+  ros::Publisher pub = nh.advertise<geometry_msgs::Twist>("/gaz_controller/cmd_vel", 1);
 
   // Create Twist message
   geometry_msgs::Twist twist;

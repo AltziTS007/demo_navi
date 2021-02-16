@@ -21,16 +21,16 @@ Now that we started the simulation we want it to map the area, to do that we wil
 
 #### 4. Save the map
 
-After you finish mapping the area, now we must save it, for that open a new terminal and hit ```rosrun map_server map_server -f /"ENTER YOUR UNIQUE PATH"/navigation/amcl/maps/test_map```. If you have problems doing that **don't panic**, I have already saved a map just in case.If so you can skip this step and close all terminals.
+After you finish mapping the area, now we must save it, for that open a new terminal and hit ```rosrun map_server map_saver -f /"ENTER YOUR UNIQUE PATH"/navigation/amcl/maps/test_map```. If you have problems doing that **don't panic**, I have already saved a map just in case.If so you can skip this step and close all terminals.
 
 #### 5. Launch amcl and move base
 
 Finally we can see our robot moving autonomously. To begin, do again the step one without running **teleop_twist_keyboard** and step two after that we can launch amcl ```roslaunch amcl amcl_omni.launch```.
 
 
-:warning: :warning: *Every bug you encouter, address it to the Issues section above.* :warning: :warning:
+:warning: *Every bug you encouter, address it to the Issues section above.* :warning:
 
-Thank you! :heart:
+Thank you!
 
 
 ### Sources from GitHub:

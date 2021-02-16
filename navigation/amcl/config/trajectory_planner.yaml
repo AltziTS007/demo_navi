@@ -5,29 +5,29 @@ TrajectoryPlannerROS:
   acc_lim_y: 3.5 #if it's not good change it to 1.5
 
   #Set the velocity limits of the robot
-  max_vel_x: 1.6  #if its wrong change the max & min vel to 0.4 and -0.4
-  min_vel_x: 1.0 # make sure min_vel_x * sim_time <2 * xy_goal_tolerance
-  max_vel_y: 1.1                  #default : 0.1
-  min_vel_y: -1.1                 #default : -0.1
+  max_vel_x: 0.6  #if its wrong change the max & min vel to 0.4 and -0.4
+  min_vel_x: 0.2 # make sure min_vel_x * sim_time <2 * xy_goal_tolerance
+  max_vel_y: 0.1                  #default : 0.1
+  min_vel_y: -0.1                 #default : -0.1
   max_vel_theta: 1.6
   min_vel_theta: -1.6
   min_in_place_vel_theta: 1.2
-  y_vels: [-0.6, -0.24, 0.24, 0.6]
-  controller_frequency: 10.0
+  #y_vels: [-0.6, -0.24, 0.24, 0.6]
+  controller_frequency: 5.0
 
   #The velocity the robot will command when trying to escape from a stuck situation
-  escape_vel: -1.2
+  escape_vel: -0.2
   
   #For this example, we'll use a holonomic robot
   holonomic_robot: true
 
   #Set the tolerance on achieving a goal
-  xy_goal_tolerance: 0.05 # m
-  yaw_goal_tolerance: 0.08 # rad
+  xy_goal_tolerance: 0.2 # m
+  yaw_goal_tolerance: 0.2 # rad
   latch_xy_goal_tolerance: false
 
   #We'll configure how long and with what granularity we'll forward simulate trajectories
-  sim_time: 0.5
+  sim_time: 0.7
   sim_granularity: 0.025 # meter
   vx_samples: 10
   vtheta_samples: 25

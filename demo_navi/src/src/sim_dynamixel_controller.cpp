@@ -7,7 +7,7 @@
 #define wheel_seperation 0.25
 #define wheel_radius 0.038
 #define pi 3.14159265359
-#define AMPlIFY 350
+#define AMPlIFY 100
 #define LEFT 0
 #define RIGHT 1
 #define BACK 2
@@ -46,7 +46,7 @@ double DynamixelController::jointPublisher(std_msgs::Float64 l,std_msgs::Float64
 
 void DynamixelController::initSubscriber(){
 
-    cmd_vel_sub = priv_node_handle.subscribe("cmd_vel",10, &DynamixelController::commandVelocityCallback,this);
+    cmd_vel_sub = priv_node_handle.subscribe("/ep/cmd_vel",10, &DynamixelController::commandVelocityCallback,this);
 }
 
 void DynamixelController::commandVelocityCallback(const geometry_msgs::Twist::ConstPtr &msg){
@@ -57,9 +57,9 @@ void DynamixelController::commandVelocityCallback(const geometry_msgs::Twist::Co
     double robot_linY_vel = msg -> linear.y;
     double robot_ang_vel = msg -> angular.z;
 
-    wll.data = (((robot_linY_vel * cos(2*pi/3)) - (sin(2*pi/3) * robot_linX_vel ) + (wheel_seperation * robot_ang_vel))/wheel_radius) * AMPlIFY;	//rad/s
-    wrr.data = (((robot_linY_vel * cos(-2*pi/3)) - (sin(-2*pi/3) * robot_linX_vel ) + (wheel_seperation * robot_ang_vel))/wheel_radius) * AMPlIFY;	//rad/s  
-    wbb.data = ((robot_linY_vel + (wheel_seperation * robot_ang_vel))/wheel_radius) * AMPlIFY;	//rad/s
+    wll.data = (((robot_linY_vel * cos(2*pi/3)) - (sin(2*pi/3) * robot_linX_vel ) + (wheel_seperation * robot_ang_vel))/wheel_radius) * AMPlIFY;	//rad/s wheel_seperation = -0.35
+    wrr.data = (((robot_linY_vel * cos(-2*pi/3)) - (sin(-2*pi/3) * robot_linX_vel ) + (wheel_seperation * robot_ang_vel))/wheel_radius) * AMPlIFY;	//rad/s  wheel_seperation = 0.35
+    wbb.data = ((robot_linY_vel + (wheel_seperation * robot_ang_vel))/wheel_radius) * AMPlIFY;	//rad wheel_seperation = 0.25
 
 
     DynamixelController::jointPublisher(wll, wrr, wbb);
@@ -72,14 +72,9 @@ int main(int argc, char **argv){
     ros::init(argc, argv, "sim_dynamixel_controller");
     ros::NodeHandle node_handle("");
 
-    //std_msgs::Float64 l = 1;
-    //std_msgs::Float64 r = 1;
-    //std_msgs::Float64 b = 1;
-
     DynamixelController dynamixel_controller;
 
     dynamixel_controller.initSubscriber();
-    //dynamixel_controller.jointPublisher(l,r,b);
 
     ros::spin();
 
