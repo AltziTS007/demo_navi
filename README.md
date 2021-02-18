@@ -25,7 +25,7 @@ After you finish mapping the area, now we must save it, for that open a new term
 
 #### 5. Launch amcl and move base
 
-Finally we can see our robot moving autonomously. To begin, do again the step one without running **teleop_twist_keyboard** and step two after that we can launch amcl ```roslaunch amcl amcl_omni.launch```.
+Finally we can see our robot moving autonomously. To begin, do again the step one without running **teleop_twist_keyboard aka wheel_operator** and step two after that we can launch amcl ```roslaunch amcl amcl_omni.launch```.
 
 
 :warning: *Every bug you encouter, address it to the Issues section above.* :warning:
