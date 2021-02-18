@@ -8,7 +8,7 @@ Now you can follow the steps to view the navigation course!
 
 #### 1. Launch our world and our robot
 
-In order to start the simulation go to your terminal and hit ``` roslaunch demo_navi mybot_world.launch```. Now we want our robot to move as we want, for that hit ```rosrun teleop_twist_keyboard teleop_twist_keyboard.py```.
+In order to start the simulation go to your terminal and hit ``` roslaunch demo_navi mybot_world.launch```. Now we want our robot to move as we want, for that hit ```rosrun demo_navi wheel_operator```.
 
 #### 2. Merge our two LaserScans
 
@@ -17,11 +17,11 @@ Because we have two LiDAR we must somehow merge their scan's so launch
 
 #### 3. Launch the SLAM algorithm
 
-Now that we started the simulation we want it to map the area, to do that we will use gmapping as our SLAM algorithm so hit ```roslaunch gmapping slam_gmapping_dn.launch``` after that go your terminal that you runned the **teleop_twist_keyboard** and navigate the area to map it seeing it from rviz.
+Now that we started the simulation we want it to map the area, to do that we will use gmapping as our SLAM algorithm so hit ```roslaunch gmapping slam_gmapping_dn.launch``` after that go your terminal that you runned the **teleop_twist_keyboard aka wheel_operator** and navigate the area to map it seeing it from rviz.
 
 #### 4. Save the map
 
-After you finish mapping the area, now we must save it, for that open a new terminal and hit ```rosrun map_server map_saver -f /"ENTER YOUR UNIQUE PATH"/navigation/amcl/maps/test_map```. If you have problems doing that **don't panic**, I have already saved a map just in case.If so you can skip this step and close all terminals.
+After you finish mapping the area, now we must save it, for that open a new terminal and hit ```rosrun map_server map_saver -f /"ENTER YOUR UNIQUE PATH"/navigation/amcl/maps/new_map```. If you have problems doing that **don't panic**, I have already saved a map just in case.If so you can skip this step and close all terminals.
 
 #### 5. Launch amcl and move base
 
