@@ -11,9 +11,9 @@ local_costmap:
     #static_map: false
     rolling_window: true
 
-    width: 1.5
-    height: 1.5
-    resolution: 0.5 #0.015
+    width: 5.0
+    height: 5.0
+    resolution: 0.03 #0.015
 
     plugins:            
         - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
@@ -25,5 +25,5 @@ local_costmap:
         
 
     inflation:
-        inflation_radius: 0.4
-        cost_scaling_factor: 4 # larger number = lower cost elevation
+        inflation_radius: 1.75
+        cost_scaling_factor: 2.58 # larger number = lower cost elevation

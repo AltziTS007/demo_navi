@@ -44,7 +44,7 @@ Maximum distance to do obstacle inflation on map, for use in likelihood_field mo
         <param name="odom_frame_id" value="odom"/>
         <param name="resample_interval" value="1"/><!--(int,default:2)Number of filter updates required before resampling.-->
 
-        <param name="transform_tolerance" value="0.3"/><!--(double,default:0.1 seconds)Time with which to post-date the transform that is published, to indicate that this transform is valid into the future.-->
+        <param name="transform_tolerance" value="0.1"/><!--(double,default:0.1 seconds)Time with which to post-date the transform that is published, to indicate that this transform is valid into the future.-->
 
         <param name="recovery_alpha_slow" value="0.0"/><!--(double,default:0.0(disabled))Exponential decay rate for the slow average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.001.-->
         <param name="recovery_alpha_fast" value="0.0"/><!--(double,default:0.0(disabled))Exponential decay rate for the fast average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.1.-->
@@ -60,6 +60,8 @@ Maximum distance to do obstacle inflation on map, for use in likelihood_field mo
         <rosparam file="$(find amcl)/config/local_costmap_params.yaml" command="load" />
         <rosparam file="$(find amcl)/config/global_costmap_params.yaml" command="load" />
         <rosparam file="$(find amcl)/config/trajectory_planner.yaml" command="load" />
+
+        <param name="controller_frequency" value="10.0"/>
     
         <remap from="cmd_vel" to="/gaz_controller/cmd_vel"/>
         <remap from="odom" to="odom"/>

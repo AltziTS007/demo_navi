@@ -4,7 +4,7 @@
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find amcl)/rviz/amcl.rviz"/>
 
     <!-- Map server -->
-    <arg name="map_file" default="$(find amcl)/maps/test_map.yaml"/>
+    <arg name="map_file" default="$(find amcl)/maps/test_map1.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
     <node pkg="amcl" type="amcl" name="amcl">
@@ -12,6 +12,7 @@
         <remap from="scan" to="scan_multi"/>
         <param name="odom_model_type" value="omni"/>
         <param name="base_frame_id" value="base_footprint"/>
+        <param name="global_frame_id" value="map"/>
         <param name="update_min_d" value="0.5"/>
         <param name="update_min_a" value="1.0"/>
         <param name="odom_alpha5" value="0.1"/>
@@ -52,6 +53,10 @@
         <param name="base_global_planner" value="global_planner/GlobalPlanner" />
         <rosparam file="$(find amcl)/config/dwa/global_planner_params.yaml" command="load" />
 
+        <!-- observation sources located in costmap_common.yaml -->
+        <rosparam file="$(find amcl)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find amcl)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+
         <!-- local planner -->   
         <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>      
         <rosparam file="$(find amcl)/config/dwa/dwa_local_planner_params.yaml" command="load"/>
@@ -65,8 +70,12 @@
         <param name="oscillation_distance" value="0.3" />
         <param name="clearing_rotation_allowed" value="false" />
         <!-- params for costmap layers --> 
-        <rosparam file="$(find amcl)/config/dwa/local_costmap_params.yaml" command="load"/>
-        <rosparam file="$(find amcl)/config/dwa/global_costmap_params.yaml" command="load"/>
+        <rosparam file="$(find amcl)/config/dwa/local_costmap_params.yaml" command="load" ns="local_costmap"/>
+        <rosparam file="$(find amcl)/config/dwa/global_costmap_params.yaml" command="load" ns="global_costmap"/>
+
+        <remap from="cmd_vel" to="/gaz_controller/cmd_vel"/>
+        <remap from="odom" to="odom"/>
+        <remap from="scan" to="scan_multi"/>
         
     </node>
 

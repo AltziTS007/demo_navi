@@ -4,7 +4,7 @@
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find amcl)/rviz/amcl.rviz"/>
 
     <!-- Map server -->
-    <arg name="map_file" default="$(find amcl)/maps/test_map.yaml"/>
+    <arg name="map_file" default="$(find amcl)/maps/test_map1.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
     <node pkg="amcl" type="amcl" name="amcl">
@@ -68,6 +68,10 @@
         <!-- params for costmap layers --> 
         <rosparam file="$(find amcl)/config/eband/local_costmap_params.yaml" command="load"/>
         <rosparam file="$(find amcl)/config/eband/global_costmap_params.yaml" command="load"/>
+
+        <remap from="cmd_vel" to="/gaz_controller/cmd_vel"/>
+        <remap from="odom" to="odom"/>
+        <remap from="scan" to="scan_multi"/>
     </node>
 
 </launch>

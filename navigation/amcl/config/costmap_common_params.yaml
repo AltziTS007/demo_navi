@@ -1,7 +1,7 @@
 obstacle_range: 2.5
 raytrace_range: 3.0
 #footprint: [[0.4, 0.4], [0.4, -0.4], [-0.4, -0.4], [-0.4, 0.4]]
-robot_radius: 0.01
+robot_radius: 0.25
 map_topic: map
 subscribe_to_updates: true
 observation_sources: laser_scan_sensor
@@ -9,7 +9,7 @@ laser_scan_sensor: {sensor_frame: base_link, data_type: LaserScan, topic: scan_m
 global_frame: map
 robot_base_frame: base_footprint
 always_send_full_costmap: true
-footprint_padding: 0.01
+footprint_padding: 0.1
 update_frequency: 4
 publish_frequency: 0.5
-controller_frequency: 10.0
+controller_frequency: 2.5
