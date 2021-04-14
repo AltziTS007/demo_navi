@@ -465,7 +465,7 @@
     <material value="Gazebo/Blue" />
     <sensor type="ray" name="sick_lms_5_laser_gazebo_v0">
       <always_on>true</always_on>
-      <update_rate>50.0</update_rate>
+      <update_rate>15.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <ray>
@@ -473,12 +473,12 @@
           <horizontal>
             <samples>811</samples>
             <resolution>1</resolution>
-            <min_angle>-1.5708</min_angle> <!--90 moires -->
+            <min_angle>-1.0</min_angle> <!--90 moires -->
             <max_angle>2.357</max_angle> <!--140 moires -->
           </horizontal>
         </scan>
         <range>
-          <min>0.05</min>
+          <min>0.15</min>
           <max>4.0</max>
           <resolution>0.01</resolution>
         </range>
@@ -486,7 +486,7 @@
       <plugin name="gazebo_ros_sick_lms_5_laser_gazebo_v0_controller" filename="libgazebo_ros_laser.so">
         <gaussianNoise>0.005</gaussianNoise>
         <alwaysOn>true</alwaysOn>
-        <updateRate>50.0</updateRate>
+        <updateRate>15.0</updateRate>
         <topicName>scan_L</topicName>     
         <frameName>sick_L_laser</frameName>
       </plugin>
@@ -497,7 +497,7 @@
     <material value="Gazebo/Blue" />
     <sensor type="ray" name="sick_lms_5_laser_gazebo_v01">
       <always_on>true</always_on>
-      <update_rate>50.0</update_rate>
+      <update_rate>15.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <ray>
@@ -506,11 +506,11 @@
             <samples>811</samples>
             <resolution>1</resolution>
             <min_angle>-2.357</min_angle> <!--140 moires -->
-            <max_angle>1.5708</max_angle> <!--90 moires -->
+            <max_angle>1.0</max_angle> <!--90 moires -->
           </horizontal>
         </scan>
         <range>
-          <min>0.05</min>
+          <min>0.15</min>
           <max>4.0</max>
           <resolution>0.01</resolution>
         </range>
@@ -518,8 +518,8 @@
       <plugin name="gazebo_ros_sick_lms_5_laser_gazebo_v01_controller" filename="libgazebo_ros_laser.so">
         <gaussianNoise>0.005</gaussianNoise>
         <alwaysOn>true</alwaysOn>
-        <updateRate>50.0</updateRate>
-        <topicName>scan_R</topicName>  <!-- allakse ta topics nomizw pws prepei na mpoun ws scan kai ta duo(scan_L & scan_R) -->
+        <updateRate>15.0</updateRate>
+        <topicName>scan_R</topicName> 
         <frameName>sick_R_laser</frameName>
       </plugin>
     </sensor>
