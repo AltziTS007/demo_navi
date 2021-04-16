@@ -9,7 +9,7 @@ laser_scan_sensor: {sensor_frame: base_link, data_type: LaserScan, topic: scan_m
 global_frame: map
 robot_base_frame: base_footprint
 always_send_full_costmap: true
-footprint_padding: 0.1
-update_frequency: 4
-publish_frequency: 0.5
+footprint_padding: 0.01
+update_frequency: 4.0
+publish_frequency: 3.0
 controller_frequency: 2.5

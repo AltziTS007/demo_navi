@@ -67,14 +67,13 @@
     respawn="false"
     output="screen"
     args="joint_state_controller left_joint_velocity_controller back_joint_velocity_controller right_joint_velocity_controller
-        joint1_position_controller
-        joint2_position_controller
-        joint3_position_controller
-        joint4_position_controller
-        joint5_position_controller
-        joint6_position_controller
-        joint7_position_controller
-        joint8_position_controller"
+        joint_1
+        joint_2
+        joint_3
+        joint_4
+        joint_5
+        gripper_prismatic_joint_1
+        gripper_prismatic_joint_2"
     ns="/demo_DIR"
   />
   
@@ -85,7 +84,7 @@
   </node>
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-      <param name="use_gui" value="False"/>
+      <param name="use_gui" value="true"/>
   </node>
 
   <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"

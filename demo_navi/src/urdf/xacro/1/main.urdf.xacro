@@ -145,169 +145,164 @@
     <!--WIDOWXL ARM LINKS & JOINTS-->
           <link name="shoulder_link">
          <visual>
-          <origin xyz="0 0 0" rpy="0 0 0" />
+          <origin xyz="0.0033 -0.0017 0.15" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/shoulder_link.stl" />
             </geometry>
             <xacro:material_black />
          </visual>
          <collision>
-          <origin xyz="0 0 0" rpy="0 0 0" />
+          <origin xyz="0.0033 -0.0017 0.15" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/shoulder_link.stl"/>
             </geometry>
          </collision>
          <inertial>
-          <origin xyz="0 0 0" rpy="0 0 0" />
+          <origin xyz="0.0033 -0.0017 0.15" rpy="0 0 0" />
             <mass value="0.1" />
             <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
          </inertial>
       </link>
       <link name="biceps_link">
          <visual>
-          <origin xyz="0.04825 0 0.14" rpy="0 0 0" />
+          <origin xyz="0.051 0.003 0.142" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/biceps_link.stl" />
             </geometry>
             <xacro:material_black />
          </visual>
          <collision>
-          <origin xyz="0.04825 0 0.14" rpy="0 0 0" />
+          <origin xyz="0.051 0.003 0.142" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/biceps_link.stl" />
             </geometry>
          </collision>
          <inertial>
-          <origin xyz="0.04825 0 0.14" rpy="0 0 0" />
+          <origin xyz="0.051 0.003 0.142" rpy="0 0 0" />
             <mass value="0.1" />
             <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
          </inertial>
       </link>
       <link name="forearm_link">
          <visual>
-          <origin xyz="0 0 0.14203" rpy="0 0 0" />
+          <origin xyz="-0.002 -0.003 0.14057" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/forearm_link.stl"/>
             </geometry>
            <xacro:material_black />
          </visual>
          <collision>
-          <origin xyz="0 0 0.14203" rpy="0 0 0" />
+          <origin xyz="-0.002 -0.003 0.14057" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/forearm_link.stl"/>
             </geometry>
          </collision>
          <inertial>
-          <origin xyz="0 0 0.14203" rpy="0 0 0" />
+          <origin xyz="-0.002 -0.003 0.14057" rpy="0 0 0" />
             <mass value="0.1" />
             <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
          </inertial>
       </link>
       <link name="wrist_1_link">
          <visual>
-          <origin xyz="0 0 0" rpy="0 0 0" />
+          <origin xyz="0.0027 -0.002 0.008" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/wrist_1_link.stl"/>
             </geometry>
             <xacro:material_black />
          </visual>
          <collision>
-          <origin xyz="0 0 0" rpy="0 0 0" />
+          <origin xyz="0.0027 -0.002 0.008" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/wrist_1_link.stl"/>
             </geometry>
          </collision>
          <inertial>
-          <origin xyz="0 0 0" rpy="0 0 0" />
+          <origin xyz="0.0027 -0.002 0.008" rpy="0 0 0" />
             <mass value="0.1" />
             <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
          </inertial>
       </link>
       <link name="wrist_2_link">
          <visual>
-          <origin xyz="0 0 0.043" rpy="0 0 0" />
+          <origin xyz="0 0 0.08" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/wrist_2_link.stl"/>
             </geometry>
             <xacro:material_black />
          </visual>
          <collision>
-          <origin xyz="0 0 0.043" rpy="0 0 0" />
+          <origin xyz="0 0 0.08" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/wrist_2_link.stl"/>
             </geometry>
          </collision>
          <inertial>
-          <origin xyz="0 0 0.043" rpy="0 0 0" />
+          <origin xyz="0 0 0.08" rpy="0 0 0" />
             <mass value="0.1" />
             <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
          </inertial>
       </link>
       <link name="gripper_rail_link">
          <visual>
-          <origin xyz = "0 0 0" rpy="0 0 1.57" />
+          <origin xyz = "0 0 0.04" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/gripper_rail_link.stl"/>
             </geometry>
             <xacro:material_black />
          </visual>
          <collision>
-          <origin xyz = "0 0 0" rpy="0 0 1.57" />
+          <origin xyz = "0 0 0.04" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/gripper_rail_link.stl"/>
             </geometry>
          </collision>
          <inertial>
-          <origin xyz = "0 0 0" rpy="0 0 1.57" />
+          <origin xyz = "0 0 0.04" rpy="0 0 0" />
             <mass value="0.1" />
             <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
          </inertial>
       </link>
-      <link name="gripper_aux_link">
-      </link>
       <link name="gripper_1_link">
          <visual>
-          <origin xyz="0 -0.0007 0" rpy="0 0 1.57" />
+          <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/gripper_hand_fixed_link.stl"/>
             </geometry>
             <xacro:material_black />
          </visual>
          <collision>
-          <origin xyz="0 -0.0007 0" rpy="0 0 1.57" />
+          <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/gripper_hand_fixed_link.stl"/>
             </geometry>
          </collision>
          <inertial>
-          <origin xyz="0 -0.0007 0" rpy="0 0 1.57" />
+          <origin xyz="0 0 0" rpy="0 0 0" />
             <mass value="0.1" />
             <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
          </inertial>
       </link>
       <link name="gripper_2_link">
          <visual>
-          <origin xyz="0 0.0007 0" rpy="0 0 -1.57" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/gripper_hand_fixed_link.stl"/>
             </geometry>
             <xacro:material_black />
          </visual>
          <collision>
-          <origin xyz="0 0.0007 0" rpy="0 0 -1.57" />
             <geometry>
                <mesh filename="package://demo_navi/src/meshes/arm/gripper_hand_fixed_link.stl"/>
             </geometry>
          </collision>
          <inertial>
-          <origin xyz="0 0.0007 0" rpy="0 0 -1.57" />
             <mass value="0.1" />
             <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
          </inertial>
       </link>
       <!-- joints -->
       <joint name="joint_1" type="revolute">
-         <origin xyz="0 0 0.15" rpy="0 0 0" />
+         <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="base_link" />
          <child link="shoulder_link" />
          <axis xyz="0 0 1" />
@@ -322,53 +317,46 @@
          <limit lower="-1.571" upper="1.571" effort="0" velocity="1.571" />
       </joint>
       <joint name="joint_3" type="revolute">
-         <origin xyz="0.04825 0 0.14203" rpy="0 1.571 0" />
+         <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="biceps_link" />
          <child link="forearm_link" />
          <axis xyz="0 1 0" />
          <limit lower="-1.571" upper="1.571" effort="0" velocity="1.571" />
       </joint>
       <joint name="joint_4" type="revolute">
-         <origin xyz="0 0 0.14203" rpy="0 0 0" />
+         <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="forearm_link" />
          <child link="wrist_1_link" />
          <axis xyz="0 1 0" />
          <limit lower="-1.745" upper="1.745" effort="0" velocity="1.571" />
       </joint>
       <joint name="joint_5" type="revolute">
-         <origin xyz="0 0 0.0715" rpy="0 0 0" />
+         <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="wrist_1_link" />
          <child link="wrist_2_link" />
          <axis xyz="0 0 1" />
          <limit lower="-2.617" upper="2.617" effort="0" velocity="1.571" />
       </joint>
-      <joint name="joint_6" type="fixed">
-         <origin xyz = "0 0 0.043" rpy="0 0 0" />
+      <joint name="joint_6" type="revolute">
+         <origin xyz = "0 0 0" rpy="0 0 0" />
          <parent link="wrist_2_link" />
          <child link="gripper_rail_link" />
          <axis xyz="0 0 1" />
          <limit lower="-0.31" upper="0.1" effort="0" velocity="0.5" />
       </joint>
-            <joint name="gripper_revolute_joint" type="revolute">
-         <origin xyz = "0 0 0" rpy="0 0 0" />
-         <parent link="gripper_rail_link" />
-         <child link="gripper_aux_link" />
-         <axis xyz="0 0 1" />
-         <limit lower="0" upper="2.6" effort="0" velocity="0.5" />
-      </joint>
       <joint name="gripper_prismatic_joint_1" type="prismatic">
          <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="gripper_rail_link" />
          <child link="gripper_1_link" />
-         <axis xyz="0 -1 0" />
+         <axis xyz="0 1 0" />
          <limit lower="0" upper="0.027" effort="0" velocity="0.5" />
       </joint>
       <joint name="gripper_prismatic_joint_2" type="prismatic">
-         <origin xyz="0 0 0" rpy="0 0 0" />
+         <origin xyz="0 0 0" rpy="0 0 3.1415" />
          <parent link="gripper_rail_link" />
          <child link="gripper_2_link" />
          <mimic joint="gripper_prismatic_joint_1" />
-         <axis xyz="0 1 0" />
+         <axis xyz="0 -1 0" />
          <limit lower="0" upper="0.027" effort="0" velocity="0.5" />
       </joint>
 
@@ -423,6 +411,17 @@
           <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+   <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_6">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
