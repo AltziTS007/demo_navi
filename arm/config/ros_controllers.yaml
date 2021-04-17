@@ -15,7 +15,6 @@ hardware_interface:
     - joint_4
     - joint_5
     - gripper_prismatic_joint_1
-    - gripper_revolute_joint
     - rim_back_joint
     - roller_n_rim_back_joint
     - roller_ne_rim_back_joint
@@ -44,4 +43,13 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  []
+  - name: /demo_DIR/joint_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+    - joint_1
+    - joint_2
+    - joint_3
+    - joint_4
+    - joint_5
+    - gripper_prismatic_joint_1

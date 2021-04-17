@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
   <rosparam command="load" file="$(find demo_navi)/src/config/joints_DIR.yaml"/>
@@ -8,7 +9,7 @@
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/>
-    <rosparam param="/source_list">[/joint_states]</rosparam>
+    <rosparam param="/source_list">[/demo_DIR/joint_states]</rosparam>
   </node>
 
   <include file="$(find arm)/launch/move_group.launch">
