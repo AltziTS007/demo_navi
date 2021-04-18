@@ -122,7 +122,7 @@ This is the Gazebo URDF model for the Intel RealSense D435 camera
         <depthUpdateRate>30.0</depthUpdateRate>
         <colorUpdateRate>30.0</colorUpdateRate>
         <infraredUpdateRate>30.0</infraredUpdateRate>
-        <depthTopicName>depth/image_raw</depthTopicName>
+        <depthTopicName>depth/image_rect_raw</depthTopicName>
         <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
         <colorTopicName>color/image_raw</colorTopicName>
         <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
