@@ -44,4 +44,5 @@ Thank you!
 - https://github.com/iralabdisco/ira_laser_tools
 - https://github.com/ros-perception/slam_gmapping
 - https://github.com/ros-planning/navigation- 
-
+- https://github.com/pal-robotics/realsense_gazebo_plugin
+- https://github.com/issaiass/realsense2_description
