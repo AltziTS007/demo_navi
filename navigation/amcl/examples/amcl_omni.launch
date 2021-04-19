@@ -4,7 +4,7 @@
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find amcl)/rviz/amcl.rviz"/>
 
     <!-- Map server -->
-    <arg name="map_file" default="$(find amcl)/maps/testara.yaml"/>
+    <arg name="map_file" default="$(find amcl)/maps/aithousa.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
     <node pkg="amcl" type="amcl" name="amcl">

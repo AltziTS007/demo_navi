@@ -103,7 +103,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/altzi/DIR_ws/src/demo_navi/src/gazebo_worlds/robocup_meshes/ROBOCUP_2016_DEMO.stl</uri>
+              <uri>/home/altzi/DIR_ws/src/demo_navi/src/gazebo_worlds/stl/env_head_quarters.stl</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -123,7 +123,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/altzi/DIR_ws/src/demo_navi/src/gazebo_worlds/robocup_meshes/ROBOCUP_2016_DEMO.stl</uri>
+              <uri>/home/altzi/DIR_ws/src/demo_navi/src/gazebo_worlds/stl/env_head_quarters.stl</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
