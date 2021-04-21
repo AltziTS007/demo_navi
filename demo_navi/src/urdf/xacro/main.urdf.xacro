@@ -6,6 +6,12 @@
 
 	<xacro:include filename="$(find demo_navi)/src/urdf/xacro/rim.urdf.xacro"/>
   <xacro:include filename="$(find demo_navi)/src/urdf/xacro/common_materials.xacro" />
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
+
+  
+  <xacro:sensor_d435 name="camera" topics_ns="camera" parent="wrist_2_link" publish_pointcloud="true">
+    <origin xyz="-0.04 0 0.02" rpy="0 -1.5708 0" />
+  </xacro:sensor_d435>  
 
 	<link name="base_footprint"/>
 
