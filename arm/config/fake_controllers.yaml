@@ -1,4 +1,9 @@
 controller_list:
+  - name: fake_hand_controller
+    joints:
+      - gripper_prismatic_joint_1
+      - gripper_prismatic_joint_2
+      - gripper_revolute_joint
   - name: fake_widowx_controller
     joints:
       - joint_1
@@ -6,7 +11,8 @@ controller_list:
       - joint_3
       - joint_4
       - joint_5
-      - gripper_prismatic_joint_1
 initial:  # Define initial robot poses.
+  - group: hand
+    pose: open
   - group: widowx
     pose: watch

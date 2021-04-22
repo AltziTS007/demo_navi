@@ -15,6 +15,8 @@ hardware_interface:
     - joint_4
     - joint_5
     - gripper_prismatic_joint_1
+    - gripper_prismatic_joint_2
+    - gripper_revolute_joint
     - rim_back_joint
     - roller_n_rim_back_joint
     - roller_ne_rim_back_joint
@@ -52,4 +54,9 @@ controller_list:
     - joint_3
     - joint_4
     - joint_5
+  - name: /demo_DIR/hand_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
     - gripper_prismatic_joint_1
+    - gripper_prismatic_joint_2

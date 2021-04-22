@@ -1376,7 +1376,6 @@
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="gripper_rail_link"/>
     <child link="gripper_2_link"/>
-    <mimic joint="gripper_prismatic_joint_1"/>
     <axis xyz="0 1 0"/>
     <limit effort="100" lower="0" upper="0.027" velocity="0.5"/>
   </joint>

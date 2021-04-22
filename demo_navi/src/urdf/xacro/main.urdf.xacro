@@ -373,7 +373,6 @@
          <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="gripper_rail_link" />
          <child link="gripper_2_link" />
-         <mimic joint="gripper_prismatic_joint_1" />
          <axis xyz="0 1 0" />
          <limit lower="0" upper="0.027" effort="100" velocity="0.5" />
       </joint>
@@ -433,6 +432,7 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+
 
   <transmission name="tran7">
     <type>transmission_interface/SimpleTransmission</type>
