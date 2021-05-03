@@ -16,12 +16,12 @@
 				<origin xyz="0 0 0"/>
 				<mass value="1"/>
 				<inertia
-					ixx="0.0007"
+					ixx="0.000007"
 					ixy="0"
 					ixz="0"
-					iyy="0.0007"
+					iyy="0.000007"
 					iyz="0"
-					izz="0.0008"
+					izz="0.000008"
 				/>
 			</inertial>
 			<visual>
@@ -117,18 +117,14 @@
 
 		</transmission>
 
-		<!--<gazebo reference = "rim_${name}_link">
-  				<mu1>5000.0</mu1>
-  				<mu2>2500.0</mu2>
-      			<kp  value="10000000.0" />
-      			<maxContacts  value="10" />
-      			<kd  value="1.0" />
-      			<fdir1 value="1 0 0"/>
-		</gazebo>-->
-		<!--<gazebo reference = "rim_${name}_joint">
-			<dampingFactor>10</dampingFactor>
-			<minDepth>0.001</minDepth>
-		</gazebo>-->
+		<gazebo reference = "rim_${name}_link">
+  				<mu1>50.0</mu1>
+  				<mu2>25.0</mu2>
+      			<!--<kp  value="10000000.0" />
+      			<kd  value="10000000.0" />
+      			<dampingFactor>10</dampingFactor>
+				<minDepth>0.001</minDepth>-->
+		</gazebo>
 
 
 	</xacro:macro>
