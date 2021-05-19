@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find amcl)/rviz/amcl.rviz"/>
 
-    <!-- Map server -->
-    <arg name="map_file" default="$(find amcl)/maps/aithousa.yaml"/>
-    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
     <node pkg="amcl" type="amcl" name="amcl">
         <!-- Publish scans from best pose at a max of 10 Hz -->
@@ -52,23 +48,5 @@ Maximum distance to do obstacle inflation on map, for use in likelihood_field mo
 
     </node>
 
-
-     <!-- Move base -->
-    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-        <rosparam file="$(find amcl)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
-        <rosparam file="$(find amcl)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
-        <rosparam file="$(find amcl)/config/local_costmap_params.yaml" command="load" />
-        <rosparam file="$(find amcl)/config/global_costmap_params.yaml" command="load" />
-        <rosparam file="$(find amcl)/config/trajectory_planner.yaml" command="load" />
-
-        <param name="controller_frequency" value="10.0"/>
-    
-        <remap from="cmd_vel" to="/gaz_controller/cmd_vel"/>
-        <remap from="odom" to="odom"/>
-        <remap from="scan" to="scan_multi"/>
-        <!--<param name="move_base/DWAPlannerROS/yaw_goal_tolerance" value="1.0"/>
-        <param name="move_base/DWAPlannerROS/xy_goal_tolerance" value="1.0"/>-->
-
-    </node>
 
 </launch>

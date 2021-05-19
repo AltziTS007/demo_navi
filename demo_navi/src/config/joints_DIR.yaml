@@ -22,7 +22,7 @@ demo_DIR:
 
     # Trajectory Controllers ---------------------------------------
     joint_trajectory_controller:
-        type: position_controllers/JointTrajectoryController
+        type: effort_controllers/JointTrajectoryController
         joints:
             - joint_1
             - joint_2
@@ -57,7 +57,7 @@ demo_DIR:
         state_publish_rate: 25
 
     hand_controller:
-        type: position_controllers/JointTrajectoryController
+        type: effort_controllers/JointTrajectoryController
         joints:
             - gripper_prismatic_joint_1
             - gripper_prismatic_joint_2

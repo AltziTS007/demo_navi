@@ -60,8 +60,8 @@
 				xyz="${xyz}"
 				rpy="${rpy}"
 			/>
-			<!--<limit effort="100000" velocity="100000"/>
-			<joint_properties friction="1.0"/>-->
+			<limit effort="100000" velocity="100000"/>
+			<joint_properties friction="1.0"/>
 
 		</joint>
 		<xacro:roller_macro
@@ -120,10 +120,11 @@
 		<gazebo reference = "rim_${name}_link">
   				<mu1>50.0</mu1>
   				<mu2>25.0</mu2>
-      			<!--<kp  value="10000000.0" />
+  				<selfCollide>False</selfCollide>
+      			<!--kp  value="10000000.0" />
       			<kd  value="10000000.0" />
       			<dampingFactor>10</dampingFactor>
-				<minDepth>0.001</minDepth>-->
+				<minDepth>0.001</minDepth-->
 		</gazebo>
 
 
