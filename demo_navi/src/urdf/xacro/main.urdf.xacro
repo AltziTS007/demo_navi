@@ -10,7 +10,7 @@
 
   
   <xacro:sensor_d435 name="camera" topics_ns="camera" parent="wrist_2_link" publish_pointcloud="true">
-    <origin xyz="0.02 0 0.01" rpy="0 0 0" />
+    <origin xyz="0.025 0 0.01" rpy="0 0 0" />
   </xacro:sensor_d435>  
 
 	<link name="base_footprint"/>
@@ -24,12 +24,12 @@
 			rpy="0 0 0" />
 		<mass value="5"/>
 		<inertia
-			ixx="0.15"
+			ixx="0.04"
 			ixy="0"
 			ixz="0"
-			iyy="0.104167"
+			iyy="0.04"
 			iyz="0"
-			izz="0.254167"
+			izz="0.08"
 		/>
 
 	</inertial>
@@ -600,8 +600,8 @@
        <forces_angle_tolerance>100</forces_angle_tolerance>
        <update_rate>10</update_rate>
        <grip_count_threshold>4</grip_count_threshold>
-       <max_grip_count>30</max_grip_count>
-       <release_tolerance>0.01</release_tolerance>
+       <max_grip_count>8</max_grip_count>
+       <release_tolerance>0.001</release_tolerance>
        <disable_collisions_on_attach>false</disable_collisions_on_attach>
        <contact_topic>__default_topic__</contact_topic>
     </plugin>

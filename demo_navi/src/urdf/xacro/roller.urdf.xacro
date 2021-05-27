@@ -10,7 +10,7 @@
 
 			<inertial>
 
-				<mass value="0.1"/>
+				<mass value="1"/>
 				<inertia
 					ixx="6.008e-07"
 					ixy="0"
@@ -57,12 +57,11 @@
 				xyz="${xyz}"
 				rpy="${rpy}"
 			/>
-			<limit effort="100000000" velocity="1000000000"/>
-			<joint_properties friction="1.0"/>
+			<limit effort="100000000" velocity="1000"/>
 		</joint>
 	<gazebo reference="roller_${name}_rim_${parent}_link">
-  			<mu1>50.0</mu1>
-  			<mu2>25.0</mu2>
+  			<!--<mu1>50.0</mu1>
+  			<mu2>25.0</mu2>-->
       		<kp  value="10000000000.0" />
       		<kd  value="10000000000.0" />
     	  	<dampingFactor>10</dampingFactor>
@@ -70,8 +69,8 @@
 
     <material>Gazebo/Grey</material>
   </gazebo>
-  <selfCollide>False</selfCollide>
   <!--<gazebo reference="roller_${name}_rim_${parent}_joint">
+    <selfCollide>False</selfCollide>
     <dampingFactor>10</dampingFactor>
     <minDepth>0.001</minDepth>
   </gazebo>-->
