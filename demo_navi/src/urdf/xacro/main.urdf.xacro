@@ -4,7 +4,7 @@
   name="demo_DIR"
 >
 
-	<xacro:include filename="$(find demo_navi)/src/urdf/xacro/rim.urdf.xacro"/>
+  <xacro:include filename="$(find demo_navi)/src/urdf/xacro/rim.urdf.xacro"/>
   <xacro:include filename="$(find demo_navi)/src/urdf/xacro/common_materials.xacro" />
   <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
 
@@ -22,14 +22,14 @@
 	<inertial>
 		<origin xyz="-0.147 0 0.05"
 			rpy="0 0 0" />
-		<mass value="5"/>
+		<mass value="15"/>
 		<inertia
-			ixx="0.04"
+			ixx="0.15"
 			ixy="0"
 			ixz="0"
-			iyy="0.04"
+			iyy="0.104167"
 			iyz="0"
-			izz="0.08"
+			izz="0.254167"
 		/>
 
 	</inertial>
@@ -181,8 +181,8 @@
          </collision>
          <inertial>
           <origin xyz="0 0 0" rpy="0 0 0" />
-            <mass value="0.001" />
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
          </inertial>
       </link>
       <link name="biceps_link">
@@ -201,8 +201,8 @@
          </collision>
          <inertial>
           <origin xyz="0.04825 0 0.14" rpy="0 0 0" />
-            <mass value="0.001" />
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+            <mass value="0.1" />
+           <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
          </inertial>
       </link>
       <link name="forearm_link">
@@ -221,8 +221,8 @@
          </collision>
          <inertial>
           <origin xyz="0 0 0.14203" rpy="0 0 0" />
-            <mass value="0.001" />
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
          </inertial>
       </link>
       <link name="wrist_1_link">
@@ -241,8 +241,8 @@
          </collision>
          <inertial>
           <origin xyz="0 0 0" rpy="0 0 0" />
-            <mass value="0.001" />
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
          </inertial>
       </link>
       <link name="wrist_2_link">
@@ -261,8 +261,8 @@
          </collision>
          <inertial>
           <origin xyz="0 0 0.043" rpy="0 0 0" />
-            <mass value="0.001" />
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
          </inertial>
       </link>
       <link name="gripper_rail_link">
@@ -281,8 +281,8 @@
          </collision>
          <inertial>
           <origin xyz = "0 0 0" rpy="0 0 1.57" />
-            <mass value="0.001" />
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
          </inertial>
       </link>
       <link name="gripper_aux_link">
@@ -303,8 +303,8 @@
          </collision>
          <inertial>
           <origin xyz="0 -0.0007 0" rpy="0 0 1.57" />
-            <mass value="0.001" />
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
          </inertial>
       </link>
       <link name="gripper_2_link">
@@ -323,8 +323,8 @@
          </collision>
          <inertial>
           <origin xyz="0 0.0007 0" rpy="0 0 -1.57" />
-            <mass value="0.001" />
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
          </inertial>
       </link>
       <!-- joints -->
@@ -333,7 +333,7 @@
          <parent link="base_link" />
          <child link="shoulder_link" />
          <axis xyz="0 0 1" />
-         <limit lower="-3.1415" upper="3.1415" effort="100" velocity="0.785" />
+         <limit lower="-3.1415" upper="3.1415" effort="100" velocity="1.571" />
       </joint>
       <joint name="joint_2" type="revolute">
          <!--origin xyz="0.04825 0 0.14203" rpy="0 0 0" /-->
@@ -510,7 +510,7 @@
       <always_on>true</always_on>
       <update_rate>100</update_rate>
       <visualize>true</visualize>
-      <topic>__default_topic__</topic>
+      <topic>__default_topic_imu_link__</topic>
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
         <topicName>imu</topicName>
         <bodyName>imu_link</bodyName>
@@ -606,7 +606,6 @@
        <contact_topic>__default_topic__</contact_topic>
     </plugin>
 </gazebo>
-
 
 	<gazebo reference="base_link">
     		<material>Gazebo/Crimson</material>
