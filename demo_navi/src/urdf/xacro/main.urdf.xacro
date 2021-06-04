@@ -383,14 +383,14 @@
          <parent link="gripper_rail_link" />
          <child link="gripper_1_link" />
          <axis xyz="0 -1 0" />
-         <limit lower="0" upper="0.027" effort="100" velocity="0.5" />
+         <limit lower="0" upper="0.027" effort="1000" velocity="0.5" />
       </joint>
       <joint name="gripper_prismatic_joint_2" type="prismatic">
          <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="gripper_rail_link" />
          <child link="gripper_2_link" />
          <axis xyz="0 1 0" />
-         <limit lower="0" upper="0.027" effort="100" velocity="0.5" />
+         <limit lower="0" upper="0.027" effort="1000" velocity="0.5" />
       </joint>
 
 
@@ -598,10 +598,10 @@
            <gripper_link>gripper_2_link</gripper_link>
         </arm>
        <forces_angle_tolerance>100</forces_angle_tolerance>
-       <update_rate>10</update_rate>
+       <update_rate>4</update_rate>
        <grip_count_threshold>4</grip_count_threshold>
        <max_grip_count>8</max_grip_count>
-       <release_tolerance>0.001</release_tolerance>
+       <release_tolerance>0.007</release_tolerance>
        <disable_collisions_on_attach>false</disable_collisions_on_attach>
        <contact_topic>__default_topic__</contact_topic>
     </plugin>
@@ -621,6 +621,18 @@
 
 	<gazebo reference="rim_right_link">
     		<material>Gazebo/Black</material>
+  	</gazebo>
+  	
+  	<gazebo reference="gripper_1_link">
+    		<mu1>5.5</mu1>
+  		<mu2>5.5</mu2>
+		<dampingFactor>10</dampingFactor>
+  	</gazebo>
+  	
+  	<gazebo reference="gripper_2_link">
+    		<mu1>5.5</mu1>
+  		<mu2>5.5</mu2>
+  		<dampingFactor>10</dampingFactor>
   	</gazebo>
 	
 

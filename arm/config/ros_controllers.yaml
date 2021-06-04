@@ -47,16 +47,18 @@ joint_state_controller:
 controller_list:
   - name: /demo_DIR/joint_trajectory_controller
     action_ns: follow_joint_trajectory
+    default: True
     type: FollowJointTrajectory
     joints:
-    - joint_1
-    - joint_2
-    - joint_3
-    - joint_4
-    - joint_5
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
   - name: /demo_DIR/hand_controller
     action_ns: follow_joint_trajectory
+    default: True
     type: FollowJointTrajectory
     joints:
-    - gripper_prismatic_joint_1
-    - gripper_prismatic_joint_2
+      - gripper_prismatic_joint_1
+      - gripper_prismatic_joint_2

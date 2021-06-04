@@ -38,8 +38,9 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.045949 0.028278 0.024241</size>
+            <size>0.02 0.02 0.1</size>
           </box>
+         </geometry>
         <surface>
           <friction>
             <ode>
