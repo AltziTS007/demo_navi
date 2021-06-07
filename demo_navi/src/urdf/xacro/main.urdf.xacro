@@ -24,12 +24,12 @@
 			rpy="0 0 0" />
 		<mass value="15"/>
 		<inertia
-			ixx="0.15"
+			ixx="15.0"
 			ixy="0"
 			ixz="0"
-			iyy="0.104167"
+			iyy="15.0"
 			iyz="0"
-			izz="0.254167"
+			izz="9.0"
 		/>
 
 	</inertial>
@@ -333,7 +333,7 @@
          <parent link="base_link" />
          <child link="shoulder_link" />
          <axis xyz="0 0 1" />
-         <limit lower="-3.1415" upper="3.1415" effort="100" velocity="1.571" />
+         <limit lower="-3.1415" upper="3.1415" effort="100" velocity="1.0" />
       </joint>
       <joint name="joint_2" type="revolute">
          <!--origin xyz="0.04825 0 0.14203" rpy="0 0 0" /-->
@@ -341,28 +341,28 @@
          <parent link="shoulder_link" />
          <child link="biceps_link" />
          <axis xyz="0 1 0" />
-         <limit lower="-1.571" upper="1.571" effort="100" velocity="1.571" />
+         <limit lower="-1.571" upper="1.571" effort="100" velocity="1.0" />
       </joint>
       <joint name="joint_3" type="revolute">
          <origin xyz="0.04825 0 0.14203" rpy="0 1.571 0" />
          <parent link="biceps_link" />
          <child link="forearm_link" />
          <axis xyz="0 1 0" />
-         <limit lower="-1.571" upper="1.571" effort="100" velocity="1.571" />
+         <limit lower="-1.571" upper="1.571" effort="100" velocity="1.0" />
       </joint>
       <joint name="joint_4" type="revolute">
          <origin xyz="0 0 0.14203" rpy="0 0 0" />
          <parent link="forearm_link" />
          <child link="wrist_1_link" />
          <axis xyz="0 1 0" />
-         <limit lower="-1.745" upper="1.745" effort="100" velocity="1.571" />
+         <limit lower="-1.745" upper="1.745" effort="100" velocity="1.0" />
       </joint>
       <joint name="joint_5" type="revolute">
          <origin xyz="0 0 0.0715" rpy="0 0 0" />
          <parent link="wrist_1_link" />
          <child link="wrist_2_link" />
          <axis xyz="0 0 1" />
-         <limit lower="-2.617" upper="2.617" effort="100" velocity="1.571" />
+         <limit lower="-2.617" upper="2.617" effort="100" velocity="1.0" />
       </joint>
       <joint name="joint_6" type="fixed">
          <origin xyz = "0 0 0.043" rpy="0 0 0" />
@@ -376,21 +376,21 @@
          <parent link="gripper_rail_link" />
          <child link="gripper_aux_link" />
          <axis xyz="0 0 1" />
-         <limit lower="0" upper="2.6" effort="100" velocity="0.5" />
+         <limit lower="0" upper="2.6" effort="10000" velocity="0.5" />
       </joint>
       <joint name="gripper_prismatic_joint_1" type="prismatic">
          <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="gripper_rail_link" />
          <child link="gripper_1_link" />
          <axis xyz="0 -1 0" />
-         <limit lower="0" upper="0.027" effort="1000" velocity="0.5" />
+         <limit lower="0" upper="0.027" effort="10000" velocity="0.5" />
       </joint>
       <joint name="gripper_prismatic_joint_2" type="prismatic">
          <origin xyz="0 0 0" rpy="0 0 0" />
          <parent link="gripper_rail_link" />
          <child link="gripper_2_link" />
          <axis xyz="0 1 0" />
-         <limit lower="0" upper="0.027" effort="1000" velocity="0.5" />
+         <limit lower="0" upper="0.027" effort="10000" velocity="0.5" />
       </joint>
 
 
@@ -621,18 +621,6 @@
 
 	<gazebo reference="rim_right_link">
     		<material>Gazebo/Black</material>
-  	</gazebo>
-  	
-  	<gazebo reference="gripper_1_link">
-    		<mu1>5.5</mu1>
-  		<mu2>5.5</mu2>
-		<dampingFactor>10</dampingFactor>
-  	</gazebo>
-  	
-  	<gazebo reference="gripper_2_link">
-    		<mu1>5.5</mu1>
-  		<mu2>5.5</mu2>
-  		<dampingFactor>10</dampingFactor>
   	</gazebo>
 	
 
