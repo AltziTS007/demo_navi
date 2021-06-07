@@ -44,18 +44,18 @@
         <joint name="joint_5" value="0" />
     </group_state>
     <group_state name="open" group="hand">
-        <joint name="gripper_prismatic_joint_1" value="0.02" />
-        <joint name="gripper_prismatic_joint_2" value="0.02" />
+        <joint name="gripper_prismatic_joint_1" value="0.027" />
+        <joint name="gripper_prismatic_joint_2" value="0.027" />
     </group_state>
-    <group_state name="close" group="hand">
-        <joint name="gripper_prismatic_joint_1" value="0.008" />
-        <joint name="gripper_prismatic_joint_2" value="0.008" />
+    <group_state name="closef2020" group="hand">
+        <joint name="gripper_prismatic_joint_1" value="0.009" />
+        <joint name="gripper_prismatic_joint_2" value="0.009" />
     </group_state>
     <group_state name="detect" group="widowx">
         <joint name="joint_1" value="3.1415" />
-        <joint name="joint_2" value="-0.6683" />
-        <joint name="joint_3" value="-0.0781" />
-        <joint name="joint_4" value="1.745" />
+        <joint name="joint_2" value="-0.5585" />
+        <joint name="joint_3" value="-0.6981" />
+        <joint name="joint_4" value="0.7854" />
         <joint name="joint_5" value="0" />
     </group_state>
     <group_state name="place2" group="widowx">
