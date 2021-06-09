@@ -58,6 +58,7 @@
   <build_depend>std_msgs</build_depend>
   <build_depend>message_generation</build_depend>
   <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>gazebo_ros</build_export_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rviz</build_export_depend>
   <build_export_depend>tf</build_export_depend>
@@ -69,6 +70,9 @@
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rviz</exec_depend>
   <exec_depend>tf</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
   <exec_depend>urdf</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>std_msgs</exec_depend>
@@ -76,8 +80,13 @@
 
 
   <!-- The export tag contains other, unspecified, tags -->
-  <export>
-    <!-- Other tools can request additional information be placed here -->
-
-  </export>
+<export>
+    <!-- gazebo_ros_paths_plugin automatically adds these to
+        GAZEBO_PLUGIN_PATH and GAZEBO_MODEL_PATH when you do this export inside
+        the package.xml file. You can than use URIs of type model://my_package/stuff. -->
+    <gazebo_ros                                                                 
+        gazebo_plugin_path="${prefix}/lib"
+	gazebo_media_path="${prefix}"
+        gazebo_model_path="${prefix}/src/gazebo_worlds/" /> 
+</export>
 </package>

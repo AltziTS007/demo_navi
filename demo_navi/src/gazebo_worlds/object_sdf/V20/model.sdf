@@ -18,7 +18,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/altzi/DIR_ws/src/demo_navi/src/gazebo_worlds/robocup_meshes/manipulation_objects/robocup/V20.stl</uri>
+            <uri>model://robocup_meshes/manipulation_objects/robocup/V20.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -38,7 +38,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/altzi/DIR_ws/src/demo_navi/src/gazebo_worlds/robocup_meshes/manipulation_objects/robocup/V20.stl</uri>
+            <uri>model://robocup_meshes/manipulation_objects/robocup/V20.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
