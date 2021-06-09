@@ -4,6 +4,10 @@
 #include <gazebo/physics/ContactManager.hh>
 #include <gazebo/physics/Contact.hh>
 #include <gazebo/common/common.hh>
+#include "ros/ros.h"
+#include "std_msgs/Bool.h"
+
+#include <sstream>
 #include <stdio.h>
 
 #include <gazebo_grasp_plugin/GazeboGraspFix.h>
@@ -20,6 +24,18 @@ using gazebo::GzVector3;
 
 // Register this plugin with the simulator
 GZ_REGISTER_MODEL_PLUGIN(GazeboGraspFix)
+
+////////////////////////////////////////////////////////////////////////////////
+int main(int argc, char** argv){
+  ros::init(argc, argv, "contact_node");
+  //ros::Publisher cont_pub = n.advertise<std_msgs::Bool>("contact_topic", 100);
+
+  ros::Rate loop_rate(10);
+  return 0;
+}
+
+ros::NodeHandle n;
+ros::Publisher cont_pub = n.advertise<std_msgs::Bool>("contact_topic", 100);
 
 ////////////////////////////////////////////////////////////////////////////////
 GazeboGraspFix::GazeboGraspFix()
@@ -611,6 +627,12 @@ void GazeboGraspFix::OnUpdate()
     }
 
     gzmsg << "GazeboGraspFix: Attaching " << objName << " to gripper " << graspingGripperName << "." << std::endl;
+    
+    std_msgs::Bool msg;
+
+    msg.data = !isAttachedToGripper;
+
+    cont_pub.publish(msg);
 
     // Store the array of contact poses which played part in the grip, sorted by colliding link.
     // Filter out all link names of other grippers, otherwise if the other gripper moves
@@ -776,6 +798,9 @@ void GazeboGraspFix::OnUpdate()
       GazeboGraspGripper &graspingGripper = gggIt->second;
       // Now, detach the object:
       gzmsg << "GazeboGraspFix: Detaching " << objName << " from gripper " << graspingGripperName << "." << std::endl;
+      std_msgs::Bool msg;
+      msg.data = false;
+      cont_pub.publish(msg);
       graspingGripper.HandleDetach(objName);
       this->OnDetach(objName, graspingGripperName);
       gripCntIt->second = 0;
