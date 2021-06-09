@@ -1,1 +1,0 @@
-Modify the following paths " <uri>/home/altzi/DIR_ws/src/demo_3omnibot_DIR/demo_navi/src/gazebo_worlds/robocup_meshes/ROBOCUP_2016_DEMO.stl</uri> "in the LEIPZIG_2016_WORK.world according to your ros_workspace and name of the computer.
