@@ -8,8 +8,6 @@ Now you can follow the steps to view the navigation course!
 
 #### 1. Launch our world and our robot
 
-:warning:!MODIFY THE PATH OF THE WORLD https://github.com/AltziTS007/demo_3omnibot_DIR/tree/master/demo_navi/src/gazebo_worlds! :warning:
-
 In order to start the simulation go to your terminal and hit ``` roslaunch demo_navi mybot_world.launch```. Now we want our robot to move as we want, for that hit ```rosrun demo_navi wheel_operator```.
 
 #### 2. Merge our two LaserScans
