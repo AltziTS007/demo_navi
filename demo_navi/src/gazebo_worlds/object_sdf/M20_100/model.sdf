@@ -3,7 +3,7 @@
   <model name='M20_100'>
     <link name='link_2'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.1</mass>
         <inertia>
           <ixx>0.166667</ixx>
           <ixy>0</ixy>

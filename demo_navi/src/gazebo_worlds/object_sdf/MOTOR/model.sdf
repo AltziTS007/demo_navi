@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='V20'>
+  <model name='MOTOR'>
     <link name='link_5'>
       <inertial>
         <mass>0.1</mass>
@@ -18,7 +18,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robocup_meshes/manipulation_objects/robocup/V20.stl</uri>
+            <uri>model://robocup_meshes/manipulation_objects/rockin/Motor.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -38,7 +38,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robocup_meshes/manipulation_objects/robocup/V20.stl</uri>
+            <uri>model://robocup_meshes/manipulation_objects/rockin/Motor.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

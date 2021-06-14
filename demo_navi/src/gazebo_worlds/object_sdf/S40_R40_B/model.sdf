@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='V20'>
-    <link name='link_5'>
+  <model name='S40_R40'>
+    <link name='link_6'>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -13,12 +13,12 @@
           <izz>0.166667</izz>
         </inertia>
       </inertial>
-      <pose frame=''>0.018258 -0.001605 -0 0 -0 0</pose>
+      <pose frame=''>-0.026547 0.033732 0.0281 0 -0 0</pose>
       <visual name='visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robocup_meshes/manipulation_objects/robocup/V20.stl</uri>
+            <uri>model://robocup_meshes/manipulation_objects/robocup/S40_40.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -26,7 +26,7 @@
           <lighting>1</lighting>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Black</name>
           </script>
         </material>
         <transparency>0</transparency>
@@ -38,7 +38,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robocup_meshes/manipulation_objects/robocup/V20.stl</uri>
+            <uri>model://robocup_meshes/manipulation_objects/robocup/S40_40.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

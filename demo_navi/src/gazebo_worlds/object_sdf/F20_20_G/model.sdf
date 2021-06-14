@@ -1,24 +1,24 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='S40_R40'>
-    <link name='link_6'>
+  <model name='F20_20_G'>
+    <link name='link_0'>
       <inertial>
         <mass>0.1</mass>
         <inertia>
-          <ixx>4.166666666666667e-05</ixx>
+          <ixx>0.166667</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>4.166666666666667e-05</iyy>
+          <iyy>0.166667</iyy>
           <iyz>0</iyz>
-          <izz>4.166666666666667e-05</izz>
+          <izz>0.166667</izz>
         </inertia>
       </inertial>
-      <pose frame=''>-0.026547 0.033732 0.0281 0 -0 0</pose>
+      <pose frame=''>-0 -0 0 0 -0 0</pose>
       <visual name='visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robocup_meshes/manipulation_objects/robocup/S40_40.stl</uri>
+            <uri>model://robocup_meshes/manipulation_objects/robocup/F20_20.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -37,11 +37,10 @@
         <max_contacts>10</max_contacts>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
-          <mesh>
-            <uri>model://robocup_meshes/manipulation_objects/robocup/S40_40.stl</uri>
-            <scale>1 1 1</scale>
-          </mesh>
-        </geometry>
+          <box>
+            <size>0.02 0.02 0.1</size>
+          </box>
+         </geometry>
         <surface>
           <friction>
             <ode>
