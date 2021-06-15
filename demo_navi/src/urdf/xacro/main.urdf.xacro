@@ -15,7 +15,7 @@
 
 	<link name="base_footprint"/>
 
-  <link name="imu_link"/>
+  	<link name="imu_link"/>
 
 	<link name="base_link">
 
@@ -70,7 +70,7 @@
 		<parent link="base_footprint" />
 		<child link="base_link" />
 		<origin
-			xyz="0 0 0"
+			xyz="0.144 0 0"
 		/>
 
 	</joint>

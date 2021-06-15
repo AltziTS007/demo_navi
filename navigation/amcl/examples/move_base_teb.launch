@@ -6,7 +6,7 @@
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find amcl)/rviz/amcl.rviz"/>
 
  <!-- Run the map server --> 
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find amcl)/maps/aithousa.yaml "/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find amcl)/maps/final_map.yaml "/>
 
  <!--- Run AMCL --> 
     <include file="$(find amcl)/examples/amcl_omni.launch" />
