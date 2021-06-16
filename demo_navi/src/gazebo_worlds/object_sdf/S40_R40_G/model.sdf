@@ -3,14 +3,14 @@
   <model name='S40_R40'>
     <link name='link_6'>
       <inertial>
-        <mass>0.1</mass>
+        <mass>1.0</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>1.0</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>1.0</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>1.0</izz>
         </inertia>
       </inertial>
       <pose frame=''>-0.026547 0.033732 0.0281 0 -0 0</pose>
