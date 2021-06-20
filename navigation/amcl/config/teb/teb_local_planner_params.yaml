@@ -12,6 +12,7 @@ TebLocalPlannerROS:
  global_plan_overwrite_orientation: True
  max_global_plan_lookahead_dist: 0.6
  feasibility_check_no_poses: 3
+ allow_init_with_backwards_motion: True
     
  # Robot
          
@@ -38,12 +39,12 @@ TebLocalPlannerROS:
  # GoalTolerance
     
  xy_goal_tolerance: 0.15
- yaw_goal_tolerance: 0.1
+ yaw_goal_tolerance: 0.05
  free_goal_vel: False
     
  # Obstacles
     
- min_obstacle_dist: 0.001
+ min_obstacle_dist: 0.1
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 30

@@ -3,14 +3,14 @@
   <model name='M30'>
     <link name='link_3'>
       <inertial>
-        <mass>0.1</mass>
+        <mass>0.2</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>0.00025</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>0.00025</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>0.00045</izz>
         </inertia>
       </inertial>
       <pose frame=''>-0.014419 0.007355 -0 0 -0 0</pose>
