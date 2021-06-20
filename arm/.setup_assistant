@@ -1,11 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
     package: demo_navi
-    relative_path: src/urdf/model.urdf.xacro
+    relative_path: src/urdf/xacro/main.urdf.xacro
     xacro_args: ""
   SRDF:
     relative_path: config/demo_DIR.srdf
   CONFIG:
-    author_name: alexask
+    author_name: Alexandros Askepidis
     author_email: alexask1738@gmail.com
-    generated_timestamp: 1622978268
+    generated_timestamp: 1624211737

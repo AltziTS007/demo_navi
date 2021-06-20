@@ -12,6 +12,6 @@ controller_list:
       - gripper_prismatic_joint_2
 initial:  # Define initial robot poses.
   - group: widowx
-    pose: watch
+    pose: navigation
   - group: hand
     pose: open

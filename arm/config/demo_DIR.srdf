@@ -36,21 +36,6 @@
         <joint name="joint_4" value="1.745" />
         <joint name="joint_5" value="0" />
     </group_state>
-    <group_state name="pick" group="widowx">
-        <joint name="joint_1" value="0" />
-        <joint name="joint_2" value="0" />
-        <joint name="joint_3" value="-0.0955" />
-        <joint name="joint_4" value="1.2051" />
-        <joint name="joint_5" value="0" />
-    </group_state>
-    <group_state name="open" group="hand">
-        <joint name="gripper_prismatic_joint_1" value="0.027" />
-        <joint name="gripper_prismatic_joint_2" value="0.027" />
-    </group_state>
-    <group_state name="closef2020" group="hand">
-        <joint name="gripper_prismatic_joint_1" value="0.009" />
-        <joint name="gripper_prismatic_joint_2" value="0.009" />
-    </group_state>
     <group_state name="detect" group="widowx">
         <joint name="joint_1" value="3.1415" />
         <joint name="joint_2" value="-0.5585" />
@@ -62,7 +47,7 @@
         <joint name="joint_1" value="2.7249" />
         <joint name="joint_2" value="-0.3385" />
         <joint name="joint_3" value="-0.2517" />
-        <joint name="joint_4" value="1.5522" />
+        <joint name="joint_4" value="1.4558" />
         <joint name="joint_5" value="-1.1133" />
     </group_state>
     <group_state name="place 2" group="widowx">
@@ -83,12 +68,19 @@
         <joint name="joint_1" value="-2.7249" />
         <joint name="joint_2" value="-0.3385" />
         <joint name="joint_3" value="-0.2517" />
-        <joint name="joint_4" value="1.5522" />
+        <joint name="joint_4" value="1.4558" />
         <joint name="joint_5" value="-1.1133" />
     </group_state>
-
+    <group_state name="closef2020" group="hand">
+        <joint name="gripper_prismatic_joint_1" value="0.009" />
+        <joint name="gripper_prismatic_joint_2" value="0.009" />
+    </group_state>
+    <group_state name="open" group="hand">
+        <joint name="gripper_prismatic_joint_1" value="0.027" />
+        <joint name="gripper_prismatic_joint_2" value="0.027" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper" parent_link="gripper_rail_link" group="hand" parent_group="widowx" />
+    <end_effector name="gripper" parent_link="gripper_rail_link" group="hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world" type="fixed" parent_frame="base_footprint" child_link="base_footprint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
@@ -141,6 +133,16 @@
     <disable_collisions link1="biceps_link" link2="shoulder_link" reason="Adjacent" />
     <disable_collisions link1="biceps_link" link2="sick_L_laser" reason="Never" />
     <disable_collisions link1="biceps_link" link2="sick_R_laser" reason="Never" />
+    <disable_collisions link1="camera_link" link2="forearm_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="gripper_1_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="gripper_2_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="gripper_rail_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="roller_n_rim_back_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="roller_s_rim_back_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="roller_se_rim_back_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="roller_sw_rim_back_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="wrist_1_link" reason="Never" />
+    <disable_collisions link1="camera_link" link2="wrist_2_link" reason="Adjacent" />
     <disable_collisions link1="forearm_link" link2="gripper_1_link" reason="Never" />
     <disable_collisions link1="forearm_link" link2="gripper_2_link" reason="Never" />
     <disable_collisions link1="forearm_link" link2="gripper_rail_link" reason="Never" />
@@ -155,9 +157,14 @@
     <disable_collisions link1="forearm_link" link2="wrist_2_link" reason="Never" />
     <disable_collisions link1="gripper_1_link" link2="gripper_2_link" reason="Default" />
     <disable_collisions link1="gripper_1_link" link2="gripper_rail_link" reason="Adjacent" />
+    <disable_collisions link1="gripper_1_link" link2="roller_sw_rim_right_link" reason="Never" />
     <disable_collisions link1="gripper_1_link" link2="wrist_1_link" reason="Never" />
     <disable_collisions link1="gripper_1_link" link2="wrist_2_link" reason="Never" />
     <disable_collisions link1="gripper_2_link" link2="gripper_rail_link" reason="Adjacent" />
+    <disable_collisions link1="gripper_2_link" link2="roller_n_rim_back_link" reason="Never" />
+    <disable_collisions link1="gripper_2_link" link2="roller_nw_rim_back_link" reason="Never" />
+    <disable_collisions link1="gripper_2_link" link2="roller_se_rim_back_link" reason="Never" />
+    <disable_collisions link1="gripper_2_link" link2="roller_sw_rim_back_link" reason="Never" />
     <disable_collisions link1="gripper_2_link" link2="wrist_1_link" reason="Never" />
     <disable_collisions link1="gripper_2_link" link2="wrist_2_link" reason="Never" />
     <disable_collisions link1="gripper_rail_link" link2="wrist_1_link" reason="Never" />
@@ -250,7 +257,6 @@
     <disable_collisions link1="roller_n_rim_back_link" link2="sick_L_laser" reason="Never" />
     <disable_collisions link1="roller_n_rim_back_link" link2="sick_R_laser" reason="Never" />
     <disable_collisions link1="roller_n_rim_back_link" link2="wrist_1_link" reason="Never" />
-    <disable_collisions link1="roller_n_rim_back_link" link2="wrist_2_link" reason="Never" />
     <disable_collisions link1="roller_n_rim_left_link" link2="roller_n_rim_right_link" reason="Never" />
     <disable_collisions link1="roller_n_rim_left_link" link2="roller_ne_rim_back_link" reason="Never" />
     <disable_collisions link1="roller_n_rim_left_link" link2="roller_ne_rim_left_link" reason="Never" />
@@ -417,6 +423,7 @@
     <disable_collisions link1="roller_se_rim_back_link" link2="sick_L_laser" reason="Never" />
     <disable_collisions link1="roller_se_rim_back_link" link2="sick_R_laser" reason="Never" />
     <disable_collisions link1="roller_se_rim_back_link" link2="wrist_1_link" reason="Never" />
+    <disable_collisions link1="roller_se_rim_back_link" link2="wrist_2_link" reason="Never" />
     <disable_collisions link1="roller_se_rim_left_link" link2="roller_se_rim_right_link" reason="Never" />
     <disable_collisions link1="roller_se_rim_left_link" link2="roller_sw_rim_back_link" reason="Never" />
     <disable_collisions link1="roller_se_rim_left_link" link2="roller_sw_rim_left_link" reason="Never" />
