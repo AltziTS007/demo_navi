@@ -37,28 +37,21 @@
         <joint name="joint_5" value="0" />
     </group_state>
     <group_state name="place 1" group="widowx">
-        <joint name="joint_1" value="2.7249" />
+        <joint name="joint_1" value="2.8985" />
         <joint name="joint_2" value="-0.3385" />
         <joint name="joint_3" value="-0.2517" />
         <joint name="joint_4" value="1.4558" />
         <joint name="joint_5" value="-1.1133" />
     </group_state>
     <group_state name="place 2" group="widowx">
-        <joint name="joint_1" value="3.0026" />
+        <joint name="joint_1" value="3.1415" />
         <joint name="joint_2" value="-0.0087" />
         <joint name="joint_3" value="-0.5989" />
-        <joint name="joint_4" value="1.3401" />
-        <joint name="joint_5" value="-0.5639" />
+        <joint name="joint_4" value="1.4172" />
+        <joint name="joint_5" value="0" />
     </group_state>
     <group_state name="place 3" group="widowx">
-        <joint name="joint_1" value="-3.0026" />
-        <joint name="joint_2" value="-0.0087" />
-        <joint name="joint_3" value="-0.5989" />
-        <joint name="joint_4" value="1.3401" />
-        <joint name="joint_5" value="-0.5639" />
-    </group_state>
-    <group_state name="place 4" group="widowx">
-        <joint name="joint_1" value="-2.7249" />
+        <joint name="joint_1" value="-2.8985" />
         <joint name="joint_2" value="-0.3385" />
         <joint name="joint_3" value="-0.2517" />
         <joint name="joint_4" value="1.4558" />
