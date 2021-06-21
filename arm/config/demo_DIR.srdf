@@ -29,14 +29,7 @@
         <joint name="joint_4" value="-1.745" />
         <joint name="joint_5" value="0" />
     </group_state>
-    <group_state name="watch" group="widowx">
-        <joint name="joint_1" value="0" />
-        <joint name="joint_2" value="-0.3211" />
-        <joint name="joint_3" value="-0.3906" />
-        <joint name="joint_4" value="1.745" />
-        <joint name="joint_5" value="0" />
-    </group_state>
-    <group_state name="detect" group="widowx">
+    <group_state name="storage_detect" group="widowx">
         <joint name="joint_1" value="3.1415" />
         <joint name="joint_2" value="-0.5585" />
         <joint name="joint_3" value="-0.6981" />
@@ -78,6 +71,13 @@
     <group_state name="open" group="hand">
         <joint name="gripper_prismatic_joint_1" value="0.027" />
         <joint name="gripper_prismatic_joint_2" value="0.027" />
+    </group_state>
+    <group_state name="detect" group="widowx">
+        <joint name="joint_1" value="0" />
+        <joint name="joint_2" value="-0.6283" />
+        <joint name="joint_3" value="-1.1519" />
+        <joint name="joint_4" value="1.1694" />
+        <joint name="joint_5" value="0" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="gripper_rail_link" group="hand" />
