@@ -34,8 +34,8 @@
         <param name="laser_likelihood_max_dist" value="2.0"/><!--(double, default: 2.0 meters)
 Maximum distance to do obstacle inflation on map, for use in likelihood_field model.-->
 
-        <param name="update_min_d" value="0.05"/><!--(double,default:0.2 meters)Translational movement required before performing a filter update.-->
-        <param name="update_min_a" value="0.5"/><!-- (double,default:π/6.0 radians)Rotational movement required before performing a filter update.-->
+        <param name="update_min_d" value="0.01"/><!--(double,default:0.2 meters)Translational movement required before performing a filter update.-->
+        <param name="update_min_a" value="0.1"/><!-- (double,default:π/6.0 radians)Rotational movement required before performing a filter update.-->
 
         <param name="odom_frame_id" value="odom"/>
         <param name="resample_interval" value="1"/><!--(int,default:2)Number of filter updates required before resampling.-->
