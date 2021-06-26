@@ -20,4 +20,6 @@
     <arg name="rviz_config" value="true"/>
   </include>
 
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find arm)/config/motion_planning.rviz"/-->
+
 </launch>

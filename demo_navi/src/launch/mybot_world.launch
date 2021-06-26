@@ -10,7 +10,7 @@
   
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!--arg name="world_name" value="$(find mybot_gazebo)/worlds/mybot.world"/-->
-    <arg name="world_name" value="$(find demo_navi)/src/gazebo_worlds/LEIPZIG_2016_WORK.world"/>
+    <arg name="world_name" value="$(find demo_navi)/src/gazebo_worlds/arena_description_2021.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
