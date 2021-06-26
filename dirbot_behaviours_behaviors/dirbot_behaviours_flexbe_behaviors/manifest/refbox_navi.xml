@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="refbox_navi">
+
+	<executable package_path="dirbot_behaviours_flexbe_behaviors.refbox_navi_sm" class="refbox_naviSM" />
+	<tagstring></tagstring>
+	<author>Milton Logothetis</author>
+	<date>Tue Jun 15 2021</date>
+	<description>
+		Combined RoboCup@Work referee box and navigation behaviour.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

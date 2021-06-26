@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="DetectObjects">
+
+	<executable package_path="dirbot_behaviours_flexbe_behaviors.detectobjects_sm" class="DetectObjectsSM" />
+	<tagstring></tagstring>
+	<author>Milton Logothetis</author>
+	<date>Mon Apr 12 2021</date>
+	<description>
+		Object detection behaviour. Involves calling object_detection_service_server.py and outputs 3D location points of detected objects alongside the predicted names.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

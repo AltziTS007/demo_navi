@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="DetectPosesDevCustom">
+
+	<executable package_path="dirbot_behaviours_flexbe_behaviors.detectposesdevcustom_sm" class="DetectPosesDevCustomSM" />
+	<tagstring></tagstring>
+	<author>Milton Logothetis</author>
+	<date>Thu May 06 2021</date>
+	<description>
+		Detects objects in the camera frame using the YOLO network and computes their 3D location in space using depth data. Additionally, outputs 2D orientation (YAW) of objects and has optimal performance when the camera is pointed at the objects in a top-view.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

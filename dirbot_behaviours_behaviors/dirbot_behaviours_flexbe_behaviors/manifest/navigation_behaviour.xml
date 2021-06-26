@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="navigation_behaviour">
+
+	<executable package_path="dirbot_behaviours_flexbe_behaviors.navigation_behaviour_sm" class="navigation_behaviourSM" />
+	<tagstring></tagstring>
+	<author>Milton Logothetis</author>
+	<date>Tue Apr 13 2021</date>
+	<description>
+		Implements a basic behaviour for sending nav goals to /move_base.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+	<params>
+
+		<param type="numeric" name="x_goal" default="0" label="x_goal" hint="Sets the x_goal">
+			<min value="-20.0000" />
+			<max value="20.0000" />
+		</param>
+
+		<param type="numeric" name="y_goal" default="0" label="y_goal" hint="Sets the y_goal">
+			<min value="-20.0000" />
+			<max value="20.0000" />
+		</param>
+
+		<param type="numeric" name="theta_goal" default="0" label="theta_goal" hint="Sets the theta_goal">
+			<min value="0" />
+			<max value="1" />
+		</param>
+
+	</params>
+
+
+</behavior>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="approach_ws_test">
+
+	<executable package_path="dirbot_behaviours_flexbe_behaviors.approach_ws_test_sm" class="approach_ws_testSM" />
+	<tagstring></tagstring>
+	<author>Milton</author>
+	<date>Tue Jun 22 2021</date>
+	<description>
+		Approach workstation state test
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

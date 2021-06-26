@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="refbox_test">
+
+	<executable package_path="dirbot_behaviours_flexbe_behaviors.refbox_test_sm" class="refbox_testSM" />
+	<tagstring></tagstring>
+	<author>Milton Logothetis</author>
+	<date>Tue Jun 15 2021</date>
+	<description>
+		refbox tester behaviour
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>

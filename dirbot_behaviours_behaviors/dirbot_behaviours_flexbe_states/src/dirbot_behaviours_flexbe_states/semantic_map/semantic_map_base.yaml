@@ -1,0 +1,102 @@
+-
+  PP01:
+    frame_id: map
+    ws_pose:
+      x: -0.198
+      y: 4.23
+      theta: 3.14
+    box_pose:
+      position:
+        x: -0.623
+        y: 4.234
+        z: 0
+      orientation:
+        x: 0
+        y: 0
+        z: -1.0
+        w: 0
+-
+  WS01:
+    frame_id: map
+    ws_pose:
+      x: -0.248
+      y: 5.795
+      theta: 3.1015
+    box_pose:
+      position:
+        x: -0.618
+        y: 5.763
+        z: 0
+      orientation:
+        x: 0
+        y: 0
+        z: -1.0
+        w: 0
+-
+  PP02:
+    frame_id: map
+    ws_pose:
+      x: -0.11
+      y: 7.037
+      theta: 1.5708
+    box_pose:
+      position:
+        x: -0.117
+        y: 7.531
+        z: 0
+      orientation:
+        x: 0
+        y: 0
+        z: -0.705
+        w: -0.705
+-
+  WS02:
+    frame_id: map
+    ws_pose:
+      x: 2.89
+      y: 7.029
+      theta: 1.254
+    box_pose: 
+      position:
+        x: 2.970
+        y: 7.526
+        z: 0
+      orientation:
+        x: 0
+        y: 0
+        z: -0.705
+        w: -0.705
+-
+  WS03:
+    frame_id: map
+    ws_pose:
+      x: 1.084
+      y: 5.742
+      theta: 3.1015
+    box_pose:
+      position:
+        x: 0.86
+        y: 5.74
+        z: 0
+      orientation:
+        x: 0
+        y: 0
+        z: -1.0
+        w: 0
+-
+  SH01:
+    frame_id: map
+    ws_pose:
+      x: 2.393
+      y: 4.305
+      theta: 0.486
+    box_pose:
+      position:
+        x: 2.841
+        y: 4.01
+        z: 0
+      orientation:
+        x: 0
+        y: 0
+        z: 0
+        w: 1.0
