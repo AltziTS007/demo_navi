@@ -45,7 +45,7 @@ class refbox_testSM(Behavior):
 
 
 	def create(self):
-		# x:30 y:365, x:130 y:365
+		# x:30 y:365, x:88 y:240
 		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'])
 
 		# Additional creation code can be added inside the following tags
@@ -62,7 +62,7 @@ class refbox_testSM(Behavior):
 										autonomy={'BMT': Autonomy.Off, 'BTT': Autonomy.Off, 'error_parsing': Autonomy.Off},
 										remapping={'task': 'task'})
 
-			# x:292 y:266
+			# x:293 y:257
 			OperatableStateMachine.add('refbox_planner',
 										RefBoxPlannerState(),
 										transitions={'task_iterated': 'move_base', 'task_exhausted': 'finished', 'incorrect_task': 'refbox_parser', 'failed': 'failed'},

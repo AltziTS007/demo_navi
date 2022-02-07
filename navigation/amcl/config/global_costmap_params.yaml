@@ -10,3 +10,4 @@ global_costmap:
   plugins: 
     - {name: static_layer,       type: "costmap_2d::StaticLayer"}
     - {name: inflation,        type: "costmap_2d::InflationLayer"}
+
