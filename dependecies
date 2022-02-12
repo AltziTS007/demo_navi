@@ -1,0 +1,14 @@
+object_recognition_msgs*
+map_server*
+gazebo*
+openslam_gmapping*
+tf2_sensor_msgs*
+move_base_msgs*
+effort_controllers*
+controller-manager*
+robot_controllers*
+robot_state_publisher*
+joint*
+teb_local_planner*
+moveit*
+flexbe*
